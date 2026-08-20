@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mohammad Hossein Heydari — construction planner and AI engineer</title>
+<meta name="description" content="Construction planner and AI engineer. PhD candidate in construction and M.Eng. student in computer science at Virginia Tech, graduating December 2026.">
+
+<meta property="og:title" content="Mohammad Hossein Heydari">
+<meta property="og:description" content="Construction planner and AI engineer. Virginia Tech, graduating December 2026.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#E4E4DF">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="wordmark" href="index.html">Mohammad Hossein Heydari</a>
+    <nav aria-label="Sections">
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#background">Background</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero wrap">
+    <div class="hero-top">
+    <!-- PORTRAIT: add photo.jpg (square, ~600px) to the repo root, then uncomment.
+    <div class="hero-portrait">
+      <img src="photo.jpg" alt="Mohammad Hossein Heydari" width="600" height="600">
+    </div>
+    -->
+    <div>
+
+    <h1>Construction planner and <em>AI engineer</em>.</h1>
+
+    <p class="lede">
+      PhD candidate in construction and M.Eng. student in computer science at Virginia Tech,
+      graduating December 2026. I have coordinated design and planning on live projects, published
+      research on construction supply chains, and now build AI systems at Intellus Build, a
+      construction SaaS startup.
+    </p>
+
+    <p class="hero-meta">
+      <span><a href="mailto:Heydari@vt.edu">Heydari@vt.edu</a></span>
+      <span><a href="https://github.com/MHhey">GitHub</a></span>
+      <span><a href="#" data-fill="linkedin">LinkedIn</a></span>
+      <span><a href="Heydari-Resume.pdf">Résumé (PDF)</a></span>
+    </p>
+    </div>
+    </div>
+
+    <figure class="stage" id="stage">
+      <canvas id="stageCanvas" role="img" aria-label="Scattered material converging into a braced structural frame."></canvas>
+    </figure>
+  </section>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section class="section wrap" id="projects">
+    <div class="section-head">
+      <p class="eyebrow">Portfolio</p>
+      <h2>Selected projects</h2>
+    </div>
+
+    <div class="work">
+
+      <article class="card card-feature">
+        <p class="kicker">PhD research · Under review, 2025</p>
+        <h3><a href="projects/agentic-bullwhip.html">Agentic AI simulation of construction supply chains</a></h3>
+        <p>
+          Modeled five supply chain tiers as autonomous AI agents, each ordering from limited local
+          information. Measured how small orders placed on site amplify into large swings for
+          suppliers, and how far shared information reduces the distortion.
+        </p>
+        <ul class="tags"><li>Multi-agent AI</li><li>AutoGen</li><li>crewAI</li><li>Python</li><li>Simulation</li></ul>
+        <p class="readmore">Details →</p>
+      </article>
+
+      <article class="card">
+        <p class="kicker">Intellus Build · 2026</p>
+        <h3><a href="projects/document-pipelines.html">Construction document and imagery pipelines</a></h3>
+        <p>
+          Built LLM pipelines that convert permits, drawings, and filings into structured records
+          for automated reporting. Applied computer vision to site imagery at scale and connected
+          both to backend services on AWS and SQL.
+        </p>
+        <ul class="tags"><li>LLM pipelines</li><li>Computer vision</li><li>AWS</li><li>SQL</li></ul>
+        <p class="readmore">Details →</p>
+      </article>
+
+      <article class="card">
+        <p class="kicker">Computer vision</p>
+        <h3><a href="projects/image-classification.html">Efficient image classification for field hardware</a></h3>
+        <p>
+          Fine-tuned a MobileNetV2 classifier with staged transfer learning on CIFAR-100. Optimized
+          for the accuracy, latency, and power limits of cameras and handheld devices used on site.
+        </p>
+        <ul class="tags"><li>TensorFlow</li><li>Keras</li><li>MobileNetV2</li><li>Edge inference</li></ul>
+        <p class="readmore">Details →</p>
+      </article>
+
+      <article class="card">
+        <p class="kicker">Full stack · 2025</p>
+        <h3><a href="projects/housing-platform.html">Housing listing and booking platform</a></h3>
+        <p>
+          Led a six-person team building a React, Node.js, and PostgreSQL platform with
+          authentication, listings, and real-time booking. Managed requirements, sprint planning,
+          and delivery across two semesters.
+        </p>
+        <ul class="tags"><li>React</li><li>Node.js</li><li>PostgreSQL</li><li>Jira</li></ul>
+        <p class="readmore">Details →</p>
+      </article>
+
+    </div>
+
+    <ul class="listing" style="margin-top:2rem">
+      <li><span class="yr">2024</span> <span><strong>Progress-based payment automation.</strong> Designed a blockchain payment system that releases construction funds against verified work, cutting approval delay for subcontractors.</span></li>
+      <li><span class="yr">2021</span> <span><strong>Site layout planning simulation.</strong> Built a hybrid simulation of equipment and material flow on congested sites. Published in <em>Construction Innovation</em> and the basis of a 2023 Allan Myers student competition win.</span></li>
+    </ul>
+  </section>
+
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section class="section band" id="experience">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Experience</p>
+        <h2>Where I've worked</h2>
+      </div>
+
+      <div class="roles">
+
+        <article class="role">
+          <p class="when">May 2026 – Present</p>
+          <div>
+            <h3>Applied AI Engineering Intern</h3>
+            <p class="where">Intellus Build, Inc. · San Francisco, CA</p>
+            <p>Built pipelines converting unstructured construction and property documents into structured data for automated reporting. Designed the architecture connecting them to backend services, and applied computer vision to site imagery at scale.</p>
+          </div>
+        </article>
+
+        <article class="role">
+          <p class="when">Jan 2023 – Present</p>
+          <div>
+            <h3>Graduate Research Assistant</h3>
+            <p class="where">Virginia Tech · Myers-Lawson School of Construction</p>
+            <p>Studied where information breaks down between owners, contractors, and suppliers, how the gaps surface as cost and delay, and whether digital systems measurably close them. Contributed to NSF-funded interdisciplinary research.</p>
+          </div>
+        </article>
+
+        <article class="role">
+          <p class="when">Jan 2026 – Present</p>
+          <div>
+            <h3>Teaching Assistant, Process Planning and Design</h3>
+            <p class="where">Virginia Tech</p>
+            <p>Taught scheduling in Primavera P6 to an undergraduate course of 89 students, alongside robotics demonstrations, grading, and office hours.</p>
+          </div>
+        </article>
+
+        <article class="role">
+          <p class="when">Jun 2020 – Dec 2021</p>
+          <div>
+            <h3>Construction Design Consultant</h3>
+            <p class="where">Malekan Engineering Group · Tehran</p>
+            <p>Coordinated BIM models across design teams, prepared submittals, and resolved RFIs for compliance. Assessed cost and carbon impact of design alternatives at early project stages.</p>
+          </div>
+        </article>
+
+        <article class="role">
+          <p class="when">2019 – 2022</p>
+          <div>
+            <h3>Earlier</h3>
+            <p class="where">University of Tehran · Tecnosa</p>
+            <p>Research and teaching assistant in project planning and control. Analyzed site layout for equipment and material flow, and supported daily site coordination as a project intern.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== BACKGROUND ===================== -->
+  <section class="section wrap" id="background">
+    <div class="section-head">
+      <p class="eyebrow">Background</p>
+      <h2>Education and research</h2>
+    </div>
+
+    <ul class="listing">
+      <li>
+        <span class="yr">2023–26</span>
+        <span>
+          <strong>PhD, Environmental Design and Planning</strong> · Virginia Tech, Myers-Lawson School of Construction · GPA 4.00<br>
+          Dissertation: <em>Mapping Current State and Technological Transformation of the Construction Supply Chain</em>
+        </span>
+      </li>
+      <li>
+        <span class="yr">2023–26</span>
+        <span><strong>M.Eng., Computer Science</strong> · Virginia Tech · GPA 3.85 · Taken simultaneously with the doctorate</span>
+      </li>
+      <li>
+        <span class="yr">2019–22</span>
+        <span><strong>M.Sc., Construction Engineering and Management</strong> · University of Tehran · GPA 18.21/20</span>
+      </li>
+      <li>
+        <span class="yr">2014–19</span>
+        <span><strong>B.Sc., Civil Engineering</strong> · Amirkabir University of Technology · GPA 15.65/20</span>
+      </li>
+    </ul>
+
+    <p style="margin-top:2.5rem">
+      Twelve journal articles and four conference papers on construction supply chains, BIM, and
+      digital construction, plus 46 peer reviews for journals including <em>Automation in
+      Construction</em>. The papers closest to this work:
+    </p>
+
+    <ul class="pubs" style="margin-top:1rem">
+      <li class="pub">
+        <span class="yr">2025</span>
+        <div>
+          <p class="title">Agentic AI Simulation of the Bullwhip Effect in Construction Supply Chains<span class="status">Under review</span></p>
+          <p class="venue">Heydari, M., Shojaei, A., McCoy, A., Akanmu, A.</p>
+        </div>
+      </li>
+      <li class="pub">
+        <span class="yr">2025</span>
+        <div>
+          <p class="title">Blockchain applications in the construction supply chain</p>
+          <p class="venue">Heydari, M., Shojaei, A. · <em>Automation in Construction</em>, Vol. 171</p>
+        </div>
+      </li>
+      <li class="pub">
+        <span class="yr">2024</span>
+        <div>
+          <p class="title">BIM framework for efficient material procurement planning</p>
+          <p class="venue">Kalantari, M., Taghaddos, H., Heydari, M. · <em>Automation in Construction</em>, Vol. 168</p>
+        </div>
+      </li>
+    </ul>
+
+    <p class="pub-note">Full list on <a href="#" data-fill="scholar">Google Scholar</a>.</p>
+  </section>
+
+  <!-- ===================== TOOLS ===================== -->
+  <section class="section wrap">
+    <div class="section-head">
+      <p class="eyebrow">Tools</p>
+      <h2>What I work with</h2>
+    </div>
+
+    <div class="kit">
+      <div>
+        <h3 class="subhead">Construction</h3>
+        <ul><li>Primavera P6, MS Project</li><li>Revit, Navisworks, Dynamo</li><li>Procore, Bluebeam</li><li>BIM coordination, RFIs, submittals</li></ul>
+      </div>
+      <div>
+        <h3 class="subhead">AI and machine learning</h3>
+        <ul><li>PyTorch, TensorFlow</li><li>scikit-learn, OpenCV</li><li>LangChain, AutoGen, crewAI</li><li>Claude API</li></ul>
+      </div>
+      <div>
+        <h3 class="subhead">Languages</h3>
+        <ul><li>Python</li><li>SQL</li><li>JavaScript</li><li>Java, R</li></ul>
+      </div>
+      <div>
+        <h3 class="subhead">Data and infrastructure</h3>
+        <ul><li>AWS</li><li>PostgreSQL, MongoDB</li><li>REST APIs, microservices</li><li>Docker, Git</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="section wrap contact" id="contact">
+    <p class="eyebrow">Contact</p>
+    <h2>Open to full-time roles from December 2026.</h2>
+    <p class="lede">
+      Construction technology, project controls, supply chain, or anywhere the built environment
+      needs better data. Email is the fastest way to reach me.
+    </p>
+    <div class="contact-links">
+      <a class="btn btn-primary" href="mailto:Heydari@vt.edu">Email me</a>
+      <a class="btn" href="Heydari-Resume.pdf">Résumé (PDF)</a>
+      <a class="btn" href="https://github.com/MHhey">GitHub</a>
+      <a class="btn" href="#" data-fill="linkedin">LinkedIn</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap colophon">
+  <span>© 2026 Mohammad Hossein Heydari</span>
+  <span>Virginia Tech</span>
+</footer>
+
+
+<script>
+(function () {
+  var wrap = document.getElementById("stage");
+  var cvs  = document.getElementById("stageCanvas");
+  if (!wrap || !cvs) return;
+  var ctx = cvs.getContext("2d");
+
+  var cs   = getComputedStyle(document.documentElement);
+  var INK  = (cs.getPropertyValue("--graphite")   || "#333A3F").trim();
+  var SOFT = (cs.getPropertyValue("--graphite-2") || "#4A5257").trim();
+  var AM   = (cs.getPropertyValue("--hivis")      || "#F0B429").trim();
+
+  var N = 800;
+  var W = 0, H = 0, DPR = 1;
+  var parts = [], scenes = [];
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var TERMS = ["AGENTIC AI", "COMPUTER VISION", "PROCUREMENT", "SCHEDULING"];
+  var termCursor = 0;
+
+  function rnd(a,b){ return a + Math.random()*(b-a); }
+  function smooth(x){ x = x<0?0:x>1?1:x; return x*x*(3-2*x); }
+  function hx(h){ h=h.replace("#",""); return [parseInt(h.substr(0,2),16),parseInt(h.substr(2,2),16),parseInt(h.substr(4,2),16)]; }
+  var INKrgb = hx(INK), AMrgb = hx(AM);
+
+  function rect(x,y,w,h){ return [[x,y],[x+w,y],[x+w,y+h],[x,y+h],[x,y]]; }
+  function circ(cx,cy,r,seg){ var p=[],s=seg||20; for(var i=0;i<=s;i++){var a=i/s*6.2832; p.push([cx+Math.cos(a)*r,cy+Math.sin(a)*r]);} return p; }
+
+  /* ---------- material icons ---------- */
+  function icoBeam(){
+    return [{pts:[[0,0],[28,0],[28,6],[17.5,6],[17.5,24],[28,24],[28,30],[0,30],[0,24],[10.5,24],[10.5,6],[0,6],[0,0]]}];
+  }
+  function icoTimber(){
+    var g=[], d=6;
+    for (var i=0;i<3;i++){
+      var y=i*9.5, x=(i===1)?3:0;
+      g.push({pts: rect(x,y,32,7)});
+      g.push({pts: [[x+32,y],[x+32+d,y-d*0.65],[x+32+d,y+7-d*0.65],[x+32,y+7]]});
+    }
+    return g;
+  }
+  function icoPipe(){
+    return [
+      {pts:circ(8,17,7.5)},   {pts:circ(8,17,4.4,14)},
+      {pts:circ(23,17,7.5)},  {pts:circ(23,17,4.4,14)},
+      {pts:circ(15.5,4,7.5)}, {pts:circ(15.5,4,4.4,14)}
+    ];
+  }
+  function icoBlock(){
+    var g=[], bw=15, bh=9, gap=1.6;
+    g.push({pts:rect(0,0,bw,bh)});
+    g.push({pts:rect(bw+gap,0,bw,bh)});
+    g.push({pts:rect(bw/2+gap,bh+gap,bw,bh)});
+    g.push({pts:rect(0,bh+gap,bw/2-gap,bh)});
+    g.push({pts:rect(bw*1.5+gap*2,bh+gap,bw/2,bh)});
+    return g;
+  }
+
+  /* ---------- placement + sampling ---------- */
+  function place(groups, cx, cy, sizeW, sizeH){
+    if (sizeH === undefined) sizeH = sizeW;
+    var xs=[], ys=[];
+    groups.forEach(function(g){ g.pts.forEach(function(p){ xs.push(p[0]); ys.push(p[1]); }); });
+    var minX=Math.min.apply(null,xs), maxX=Math.max.apply(null,xs);
+    var minY=Math.min.apply(null,ys), maxY=Math.max.apply(null,ys);
+    var bw=(maxX-minX)||1, bh=(maxY-minY)||1;
+    var s=Math.min(sizeW/bw, sizeH/bh);
+    return groups.map(function(g){
+      return { accent:g.accent, pts: g.pts.map(function(p){
+        return [cx+(p[0]-minX-bw/2)*s, cy+(p[1]-minY-bh/2)*s];
+      })};
+    });
+  }
+
+  function sample(groups, n){
+    var segs=[], total=0;
+    groups.forEach(function(g){
+      var acc=g.accent?1:0;
+      for (var i=0;i<g.pts.length-1;i++){
+        var a=g.pts[i], b=g.pts[i+1];
+        var d=Math.hypot(b[0]-a[0], b[1]-a[1]);
+        if (d>0.0001){ segs.push({a:a,b:b,d:d,acc:acc}); total+=d; }
+      }
+    });
+    if (!segs.length) return [];
+    var out=[], step=total/n, walked=0, si=0;
+    for (var k=0;k<n;k++){
+      var tg=k*step;
+      while (si<segs.length-1 && walked+segs[si].d<tg){ walked+=segs[si].d; si++; }
+      var t=segs[si].d>0?(tg-walked)/segs[si].d:0; t=t<0?0:t>1?1:t;
+      out.push({ x:segs[si].a[0]+(segs[si].b[0]-segs[si].a[0])*t,
+                 y:segs[si].a[1]+(segs[si].b[1]-segs[si].a[1])*t, a:segs[si].acc });
+    }
+    return out;
+  }
+
+  /* ---------- vector stroke font: letters as polylines, no canvas text ----- */
+  // 6 wide x 10 tall per glyph, drawn top-left origin
+  var GLYPH = {
+    "A":[[[0,10],[3,0],[6,10]],[[1.2,6],[4.8,6]]],
+    "B":[[[0,0],[0,10]],[[0,0],[4,0],[5.4,1.3],[5.4,3.7],[4,5],[0,5]],[[0,5],[4.4,5],[6,6.4],[6,8.6],[4.4,10],[0,10]]],
+    "C":[[[6,2],[4.5,0],[1.5,0],[0,2],[0,8],[1.5,10],[4.5,10],[6,8]]],
+    "D":[[[0,0],[0,10]],[[0,0],[4,0],[6,2],[6,8],[4,10],[0,10]]],
+    "E":[[[6,0],[0,0],[0,10],[6,10]],[[0,5],[4.4,5]]],
+    "F":[[[6,0],[0,0],[0,10]],[[0,5],[4.4,5]]],
+    "G":[[[6,2],[4.5,0],[1.5,0],[0,2],[0,8],[1.5,10],[4.5,10],[6,8],[6,5.6],[3.4,5.6]]],
+    "H":[[[0,0],[0,10]],[[6,0],[6,10]],[[0,5],[6,5]]],
+    "I":[[[1,0],[5,0]],[[3,0],[3,10]],[[1,10],[5,10]]],
+    "J":[[[4.5,0],[4.5,8],[3,10],[1.2,10],[0,8.4]]],
+    "K":[[[0,0],[0,10]],[[6,0],[0,5.6]],[[2,3.9],[6,10]]],
+    "L":[[[0,0],[0,10],[5.4,10]]],
+    "M":[[[0,10],[0,0],[3,4.6],[6,0],[6,10]]],
+    "N":[[[0,10],[0,0],[6,10],[6,0]]],
+    "O":[[[1.5,0],[4.5,0],[6,2],[6,8],[4.5,10],[1.5,10],[0,8],[0,2],[1.5,0]]],
+    "P":[[[0,10],[0,0],[4.5,0],[6,1.5],[6,4],[4.5,5.5],[0,5.5]]],
+    "Q":[[[1.5,0],[4.5,0],[6,2],[6,8],[4.5,10],[1.5,10],[0,8],[0,2],[1.5,0]],[[3.8,7.4],[6,10]]],
+    "R":[[[0,10],[0,0],[4.5,0],[6,1.5],[6,4],[4.5,5.5],[0,5.5]],[[3,5.5],[6,10]]],
+    "S":[[[6,1.5],[4.5,0],[1.5,0],[0,1.5],[0,3.5],[1.5,5],[4.5,5],[6,6.5],[6,8.5],[4.5,10],[1.5,10],[0,8.5]]],
+    "T":[[[0,0],[6,0]],[[3,0],[3,10]]],
+    "U":[[[0,0],[0,8],[1.5,10],[4.5,10],[6,8],[6,0]]],
+    "V":[[[0,0],[3,10],[6,0]]],
+    "W":[[[0,0],[1.2,10],[3,4],[4.8,10],[6,0]]],
+    "X":[[[0,0],[6,10]],[[6,0],[0,10]]],
+    "Y":[[[0,0],[3,5],[6,0]],[[3,5],[3,10]]],
+    "Z":[[[0,0],[6,0],[0,10],[6,10]]],
+    "-":[[[1,5],[5,5]]],
+    " ":[]
+  };
+  var GW = 6, GH = 10, GTRACK = 2.6;
+
+  function wordGroups(word, accent){
+    var g = [], x = 0;
+    for (var i=0;i<word.length;i++){
+      var strokes = GLYPH[word.charAt(i)];
+      if (strokes){
+        for (var s=0;s<strokes.length;s++){
+          var pts = [];
+          for (var k=0;k<strokes[s].length;k++) pts.push([strokes[s][k][0] + x, strokes[s][k][1]]);
+          g.push({ pts: pts, accent: accent });
+        }
+      }
+      x += GW + GTRACK;
+    }
+    return g;
+  }
+  function wordWidth(word){ return word.length*(GW+GTRACK) - GTRACK; }
+
+  function sceneTerms(){
+    var narrow = W < 620;
+    // a field of terms on wide screens; stacked and larger where space is tight
+    // all four always on screen; AGENTIC AI leads, in amber
+    var slots = narrow ? [
+      { cx: W*0.50, cy: H*0.15, maxW: W*0.92, cap: H*0.150 },
+      { cx: W*0.50, cy: H*0.38, maxW: W*0.94, cap: H*0.130 },
+      { cx: W*0.50, cy: H*0.61, maxW: W*0.92, cap: H*0.130 },
+      { cx: W*0.50, cy: H*0.84, maxW: W*0.92, cap: H*0.130 }
+    ] : [
+      { cx: W*0.26, cy: H*0.28, maxW: W*0.40, cap: H*0.170 },
+      { cx: W*0.73, cy: H*0.30, maxW: W*0.42, cap: H*0.130 },
+      { cx: W*0.28, cy: H*0.68, maxW: W*0.40, cap: H*0.140 },
+      { cx: W*0.73, cy: H*0.72, maxW: W*0.40, cap: H*0.135 }
+    ];
+    var accentSlot = 0;
+    var picks = [];
+    for (var t=0;t<slots.length;t++) picks.push(TERMS[(termCursor + t) % TERMS.length]);
+    var g = [];
+    picks.forEach(function(word, i){
+      var sl = slots[i];
+      var scale = Math.min(sl.cap / GH, sl.maxW / wordWidth(word));
+      var w = wordWidth(word)*scale, h = GH*scale;
+      var ox = sl.cx - w/2, oy = sl.cy - h/2;
+      wordGroups(word, i === accentSlot).forEach(function(grp){
+        g.push({ accent: grp.accent, pts: grp.pts.map(function(p){
+          return [ox + p[0]*scale, oy + p[1]*scale];
+        })});
+      });
+    });
+    return sample(g, Math.round(N*0.80));
+  }
+
+  /* ---------- scenes ---------- */
+  function sceneMaterials(){
+    var u = Math.min(W, H*1.9)*0.135, g=[];
+    [[icoBeam(),0.17,0.32,0.95],
+     [icoTimber(),0.43,0.20,1.10],
+     [icoPipe(),0.76,0.30,1.00],
+     [icoBlock(),0.34,0.74,1.00]
+    ].forEach(function(s){ g=g.concat(place(s[0], s[1]*W, s[2]*H, u*s[3])); });
+    return sample(g, Math.round(N*0.38));
+  }
+
+  function sceneMap(){
+    var land = [
+      [4,10],[6,6],[30,4],[46,4],[48,7],[53,6],[56,10],[57,15],[59,17],[61,12],
+      [64,13],[66,16],[70,14],[72,12],[75,8],[78,10],[77,15],[75,19],[73,23],
+      [72,27],[70,31],[69,35],[71,39],[72,47],[69,49],[67,42],[65,38],[60,39],
+      [56,38],[52,40],[49,38],[45,40],[41,45],[37,43],[34,39],[30,39],[24,38],
+      [17,38],[14,35],[12,30],[9,24],[7,18],[4,13],[4,10]
+    ];
+    var g=[{pts:land},{pts:circ(43,26,3.2,16), accent:true}];
+    return sample(place(g, W*0.5, H*0.5, W*0.62, H*0.86), Math.round(N*0.60));
+  }
+
+  function sceneBuilding(){
+    var g=[], C=Math.cos(Math.PI/6), S=0.30;
+    function iso(x,y,z){ return [(x-y)*C, (x+y)*S - z]; }
+    function box(x0,y0,x1,y1,z0,z1,acc){
+      var b=[[x0,y0],[x1,y0],[x1,y1],[x0,y1]];
+      var bot=b.map(function(p){return iso(p[0],p[1],z0);}); bot.push(bot[0]);
+      var top=b.map(function(p){return iso(p[0],p[1],z1);}); top.push(top[0]);
+      g.push({pts:bot}); g.push({pts:top, accent:!!acc});
+      for(var i=0;i<4;i++) g.push({pts:[bot[i],top[i]]});
+    }
+    box(0,0,2.2,2.0,0,2.4,true);
+    [0.8,1.6].forEach(function(z){
+      var b=[[0,0],[2.2,0],[2.2,2.0],[0,2.0]].map(function(p){return iso(p[0],p[1],z);});
+      b.push(b[0]); g.push({pts:b});
+    });
+    box(2.6,0.2,5.6,2.0,0,1.7,false);
+    box(6.0,0.4,10.0,2.0,0,1.05,false);
+    return sample(place(g, W*0.5, H*0.52, W*0.72, H*0.80), Math.round(N*0.70));
+  }
+
+  function rebuildScenes(){
+    scenes = [ sceneMaterials(), sceneMap(), sceneTerms(), sceneBuilding() ];
+  }
+
+  /* ---------- build ---------- */
+  function build(){
+    var r = wrap.getBoundingClientRect();
+    W = Math.max(320, r.width);
+    H = W < 620 ? 270 : 400;
+    DPR = Math.min(window.devicePixelRatio || 1, 2);
+    cvs.width=W*DPR; cvs.height=H*DPR;
+    cvs.style.width=W+"px"; cvs.style.height=H+"px";
+    ctx.setTransform(DPR,0,0,DPR,0,0);
+
+    rebuildScenes();
+
+    if (!parts.length){
+      for (var k=0;k<N;k++){
+        parts.push({ fx:rnd(0,W), fy:rnd(0,H), vx:rnd(-0.26,0.26), vy:rnd(-0.2,0.2),
+                     x:0, y:0, ta:-1, tb:-1, ph:Math.random()*6.28, d:Math.random(), r:rnd(0.8,1.5) });
+      }
+      parts.forEach(function(p){ p.x=p.fx; p.y=p.fy; });
+    }
+  }
+
+  // dots claim the nearest point, measured from where they are right now
+  function assignTo(sceneIdx, fromRendered){
+    var pts = scenes[sceneIdx], m = pts.length;
+    for (var i=0;i<N;i++) parts[i].tb = -1;
+    var taken = new Uint8Array(N);
+    var cx=W/2, cy=H/2, order=[];
+    for (var k=0;k<m;k++) order.push(k);
+    order.sort(function(a,b){
+      return Math.hypot(pts[b].x-cx,pts[b].y-cy) - Math.hypot(pts[a].x-cx,pts[a].y-cy);
+    });
+    for (var q=0;q<m;q++){
+      var t=pts[order[q]], best=-1, bd=Infinity;
+      for (var j=0;j<N;j++){
+        if (taken[j]) continue;
+        var sx = fromRendered ? parts[j].x : parts[j].fx;
+        var sy = fromRendered ? parts[j].y : parts[j].fy;
+        var dx=sx-t.x, dy=sy-t.y, d=dx*dx+dy*dy;
+        if (d<bd){ bd=d; best=j; }
+      }
+      if (best>=0){ taken[best]=1; parts[best].tb=order[q]; }
+    }
+  }
+
+  /* ---------- timeline ---------- */
+  // materials flows straight into the map; every other change passes through scatter
+  var TL = [
+    { k:"scatter", d:1.2 },
+    { k:"form",    s:0, d:1.8 },
+    { k:"hold",    s:0, d:2.6 },
+    { k:"morph",   s:0, t:1, d:2.4, bow:0.20 },
+    { k:"hold",    s:1, d:2.8 },
+    { k:"release", s:1, d:1.2 },
+    { k:"scatter", d:1.1 },
+    { k:"form",    s:2, d:1.8 },
+    { k:"hold",    s:2, d:3.4 },
+    { k:"release", s:2, d:1.2 },
+    { k:"scatter", d:1.1 },
+    { k:"form",    s:3, d:2.0 },
+    { k:"hold",    s:3, d:3.4 },
+    { k:"release", s:3, d:1.3 }
+  ];
+  var CYCLE = TL.reduce(function(a,x){ return a + x.d; }, 0);
+  var starts = []; (function(){ var acc=0; TL.forEach(function(x){ starts.push(acc); acc+=x.d; }); })();
+
+  function anchor(p, sceneIdx, tgtIdx){
+    if (sceneIdx < 0 || tgtIdx < 0) return [p.fx, p.fy];
+    var t = scenes[sceneIdx][tgtIdx];
+    return t ? [t.x, t.y] : [p.fx, p.fy];
+  }
+
+  function render(seg, prog, t){
+    ctx.clearRect(0,0,W,H);
+    var kind = seg.k;
+    var aScene = -1, bScene = -1, mix = 0, bow = seg.bow || 0.085;
+
+    if (kind === "scatter"){ mix = 0; }
+    else if (kind === "form"){ bScene = seg.s; mix = prog; }
+    else if (kind === "hold"){ aScene = seg.s; bScene = seg.s; mix = 1; }
+    else if (kind === "morph"){ aScene = seg.s; bScene = seg.t; mix = prog; }
+    else if (kind === "release"){ aScene = seg.s; mix = prog; bScene = -1; }
+
+    for (var i=0;i<N;i++){
+      var p = parts[i];
+      if (!reduce){
+        p.fx += p.vx; p.fy += p.vy;
+        if (p.fx < 4){ p.fx = 4; p.vx = Math.abs(p.vx); }
+        if (p.fx > W-4){ p.fx = W-4; p.vx = -Math.abs(p.vx); }
+        if (p.fy < 4){ p.fy = 4; p.vy = Math.abs(p.vy); }
+        if (p.fy > H-4){ p.fy = H-4; p.vy = -Math.abs(p.vy); }
+      }
+
+      var A, B, local, acc = 0;
+      if (kind === "release"){
+        A = anchor(p, aScene, p.ta);          // starts on the shape
+        B = [p.fx, p.fy];                     // ends in the drifting field
+        local = smooth((mix - p.d*0.18) / 0.82);
+        var ta0 = (aScene>=0 && p.ta>=0) ? scenes[aScene][p.ta] : null;
+        acc = ta0 ? ta0.a * (1 - local) : 0;
+      } else if (kind === "hold"){
+        A = B = anchor(p, bScene, p.tb);
+        local = 1;
+        var th = (bScene>=0 && p.tb>=0) ? scenes[bScene][p.tb] : null;
+        acc = th ? th.a : 0;
+      } else if (kind === "morph"){
+        A = anchor(p, aScene, p.ta);
+        B = anchor(p, bScene, p.tb);
+        local = smooth((mix - p.d*0.26) / 0.74);
+        var tm = (bScene>=0 && p.tb>=0) ? scenes[bScene][p.tb] : null;
+        var tm0 = (aScene>=0 && p.ta>=0) ? scenes[aScene][p.ta] : null;
+        acc = (tm0 ? tm0.a : 0) * (1-local) + (tm ? tm.a : 0) * local;
+      } else if (kind === "form"){
+        A = [p.fx, p.fy];
+        B = anchor(p, bScene, p.tb);
+        local = smooth((mix - p.d*0.22) / 0.78);
+        var tf = (bScene>=0 && p.tb>=0) ? scenes[bScene][p.tb] : null;
+        acc = tf ? tf.a * local : 0;
+      } else {
+        A = B = [p.fx, p.fy]; local = 0;
+      }
+
+      var dx = B[0]-A[0], dy = B[1]-A[1];
+      var arc = Math.sin(local*Math.PI) * bow;
+      var px = A[0] + dx*local - dy*arc;
+      var py = A[1] + dy*local + dx*arc;
+
+      var settled = (kind === "hold") ? 1 : (kind === "release" ? (1 - local) : (kind === "morph" ? 1 : local));
+      if (!reduce && settled > 0.5) py += Math.sin(t*0.65 + p.ph) * 0.9 * settled;
+
+      p.x = px; p.y = py;
+
+      if (acc > 0.02){
+        var cr=Math.round(INKrgb[0]+(AMrgb[0]-INKrgb[0])*acc);
+        var cg=Math.round(INKrgb[1]+(AMrgb[1]-INKrgb[1])*acc);
+        var cb=Math.round(INKrgb[2]+(AMrgb[2]-INKrgb[2])*acc);
+        ctx.fillStyle="rgb("+cr+","+cg+","+cb+")";
+      } else {
+        ctx.fillStyle = settled > 0.18 ? INK : SOFT;
+      }
+      ctx.globalAlpha = 0.15 + 0.63*settled;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r*(0.85+0.7*settled), 0, 6.2832);
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  build();
+
+  if (reduce){
+    assignTo(3, false);
+    for (var z=0;z<N;z++) parts[z].ta = parts[z].tb;
+    render({k:"hold", s:3}, 1, 0);
+    return;
+  }
+
+  var t0 = null, raf, lastSeg = -1;
+
+  function frame(now){
+    if (t0===null) t0 = now;
+    var s = (now - t0)/1000, p = s % CYCLE;
+
+    var idx = 0;
+    for (var i=TL.length-1;i>=0;i--){ if (p >= starts[i]){ idx = i; break; } }
+    var seg = TL[idx];
+    var prog = seg.d > 0 ? (p - starts[idx]) / seg.d : 1;
+    prog = prog < 0 ? 0 : prog > 1 ? 1 : prog;
+
+    if (idx !== lastSeg){
+      // carry the previous target forward, then work out the new one
+      for (var k=0;k<N;k++) parts[k].ta = parts[k].tb;
+      if (seg.k === "form"){ assignTo(seg.s, false); }
+      else if (seg.k === "morph"){ assignTo(seg.t, true); }
+      else if (seg.k === "release"){ /* keep ta, fall back to drift */ }
+      else if (seg.k === "scatter"){
+        for (var m=0;m<N;m++) parts[m].tb = -1;
+        if (idx === 0) scenes[2] = sceneTerms();
+      }
+      lastSeg = idx;
+    }
+
+    render(seg, prog, s);
+    raf = requestAnimationFrame(frame);
+  }
+  raf = requestAnimationFrame(frame);
+
+  var rt;
+  window.addEventListener("resize", function(){ clearTimeout(rt); rt = setTimeout(function(){ build(); lastSeg = -1; }, 180); });
+  document.addEventListener("visibilitychange", function(){
+    if (document.hidden) cancelAnimationFrame(raf);
+    else { t0 = null; lastSeg = -1; raf = requestAnimationFrame(frame); }
+  });
+})();
+</script>
+</body>
+
+
+
+
+
+</html>
