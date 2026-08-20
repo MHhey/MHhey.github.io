@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mohammad Hossein Heydari — construction management &amp; applied AI</title>
+<meta name="description" content="Construction management and computer science at Virginia Tech, graduating December 2026. Applied AI engineering for construction planning, supply chains and project data.">
+
+<meta property="og:title" content="Mohammad Hossein Heydari">
+<meta property="og:description" content="Construction management and applied AI — planning, supply chains, and project data.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#E4E4DF">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="wordmark" href="index.html">Mohammad Hossein Heydari</a>
+    <nav aria-label="Sections">
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#background">Background</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero wrap">
+    <div class="hero-top">
+    <!-- PORTRAIT: add photo.jpg (square, ~600px) to the repo root, then uncomment.
+    <div class="hero-portrait">
+      <img src="photo.jpg" alt="Mohammad Hossein Heydari" width="600" height="600">
+    </div>
+    -->
+    <div>
+
+    <h1>Construction management, and the software it runs on.</h1>
+
+    <p class="lede">
+      Graduating December 2026 from Virginia Tech with a PhD in construction and an M.Eng. in
+      computer science, taken together. Experience across project planning and BIM coordination on
+      live projects, research on construction supply chains, and applied AI at a vertical SaaS
+      startup.
+    </p>
+
+    <p class="hero-meta">
+      <span><a href="mailto:Heydari@vt.edu">Heydari@vt.edu</a></span>
+      <span><a href="https://github.com/MHhey">GitHub</a></span>
+      <span><a href="#" data-fill="linkedin">LinkedIn</a></span>
+      <span><a href="Heydari-Resume.pdf">Résumé (PDF)</a></span>
+    </p>
+    </div>
+    </div>
+
+    <figure class="whip">
+      <svg id="whipSvg" viewBox="0 0 900 210" role="img" aria-labelledby="whip-title">
+        <title id="whip-title">A construction supply chain shown in two states: ordering swings that grow larger toward the supplier end, then settling into a level, predictable flow.</title>
+        <line x1="0" y1="105" x2="900" y2="105" stroke="var(--rule)" stroke-width="1"></line>
+        <g id="whipTiers"></g>
+        <path id="whipFill" class="whip-fill" fill="var(--hivis)"></path>
+        <path id="whipWave" class="whip-wave" stroke="var(--hivis)"></path>
+        <circle id="whipPulse" r="4.5" fill="var(--teal)" opacity="0"></circle>
+      </svg>
+      <figcaption class="whip-cap">
+        A single order placed on site arrives at suppliers as a much larger swing. My research is on
+        why that happens, and what settles it.
+      </figcaption>
+    </figure>
+  </section>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section class="section wrap" id="projects">
+    <div class="section-head">
+      <p class="eyebrow">Portfolio</p>
+      <h2>Selected projects</h2>
+    </div>
+
+    <div class="work">
+
+      <article class="card card-feature">
+        <p class="kicker">PhD research · Under review, 2025</p>
+        <h3><a href="projects/agentic-bullwhip.html">Why ordering swings grow up the supply chain</a></h3>
+        <p>
+          A steady, predictable order placed on site can reach fabricators and suppliers as a large,
+          expensive swing — surplus material on some projects, shortages on others. I modelled each
+          tier of a construction supply chain as an independent decision-maker working only from what
+          it can see, then measured what changes when tiers share information instead of ordering
+          blind.
+        </p>
+        <ul class="tags"><li>Supply chain modelling</li><li>Multi-agent AI</li><li>Python</li><li>AutoGen</li><li>crewAI</li></ul>
+        <p class="readmore">Details →</p>
+      </article>
+
+      <article class="card">
+        <p class="kicker">Intellus Build · 2026</p>
+        <h3><a href="projects/document-pipelines.html">Reading project documents at scale</a></h3>
+        <p>
+          Permits, drawings, filings and site photographs hold most of what a project team needs to
+          know, in formats no reporting system can read. I build the pipelines that pull structured
+          records out of them, and the vision models that do the same for site imagery.
+        </p>
+        <ul class="tags"><li>Document extraction</li><li>Computer vision</li><li>AWS</li><li>SQL</li></ul>
+        <p class="readmore">Details →</p>
+      </article>
+
+      <article class="card">
+        <p class="kicker">Computer vision</p>
+        <h3><a href="projects/image-classification.html">Vision models that run on site hardware</a></h3>
+        <p>
+          A camera on a jobsite has no server rack behind it. This classifier is built for that
+          constraint — compact enough to run on limited hardware in the field, accurate enough that
+          the output is worth acting on.
+        </p>
+        <ul class="tags"><li>Edge inference</li><li>TensorFlow</li><li>MobileNetV2</li></ul>
+        <p class="readmore">Details →</p>
+      </article>
+
+      <article class="card">
+        <p class="kicker">Full stack · 2025</p>
+        <h3><a href="projects/housing-platform.html">Property listing and booking platform</a></h3>
+        <p>
+          A housing platform with authentication, listings and real-time booking, shipped by a
+          six-person team over two semesters. I led requirements, sprint planning and coordination,
+          and built the booking flow.
+        </p>
+        <ul class="tags"><li>React</li><li>Node.js</li><li>PostgreSQL</li><li>Jira</li></ul>
+        <p class="readmore">Details →</p>
+      </article>
+
+    </div>
+
+    <ul class="listing" style="margin-top:2rem">
+      <li><span class="yr">2024</span> <span><strong>Progress-based payment automation</strong> — releasing construction payments against verified work rather than a sequential approval chain, to cut the delay that constrains subcontractor cash flow.</span></li>
+      <li><span class="yr">2021</span> <span><strong>Site layout planning under congestion</strong> — hybrid simulation of how equipment and material movement drive congestion and delay. Published in <em>Construction Innovation</em>; basis of a 2023 student competition win judged by Allan Myers.</span></li>
+    </ul>
+  </section>
+
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section class="section band" id="experience">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Experience</p>
+        <h2>Where I've worked</h2>
+      </div>
+
+      <div class="roles">
+
+        <article class="role">
+          <p class="when">May 2026 — Present</p>
+          <div>
+            <h3>Applied AI Engineering Intern</h3>
+            <p class="where">Intellus Build, Inc. · San Francisco, CA</p>
+            <p>Vertical SaaS for construction and property. Built pipelines converting unstructured construction documents into structured data for automated reporting, designed the architecture connecting them to backend services, and applied computer vision to site imagery at scale.</p>
+          </div>
+        </article>
+
+        <article class="role">
+          <p class="when">Jan 2023 — Present</p>
+          <div>
+            <h3>Graduate Research Assistant</h3>
+            <p class="where">Virginia Tech · Myers-Lawson School of Construction</p>
+            <p>Research on construction supply chains: where information breaks down between owners, contractors and suppliers, how that surfaces as cost and delay, and whether digital systems measurably improve it. Contributed to NSF-funded interdisciplinary research.</p>
+          </div>
+        </article>
+
+        <article class="role">
+          <p class="when">Jan 2026 — Present</p>
+          <div>
+            <h3>Teaching Assistant — Process Planning &amp; Design</h3>
+            <p class="where">Virginia Tech</p>
+            <p>Taught scheduling in Primavera P6 to an undergraduate course of 89 students, alongside robotics demonstrations, grading and office hours.</p>
+          </div>
+        </article>
+
+        <article class="role">
+          <p class="when">Jun 2020 — Dec 2021</p>
+          <div>
+            <h3>Construction Design Consultant</h3>
+            <p class="where">Malekan Engineering Group · Tehran</p>
+            <p>Coordinated BIM models across design teams, prepared submittals and resolved RFIs for compliance. Assessed cost and carbon impact of design alternatives at early project stages.</p>
+          </div>
+        </article>
+
+        <article class="role">
+          <p class="when">2019 — 2022</p>
+          <div>
+            <h3>Earlier</h3>
+            <p class="where">University of Tehran · Tecnosa</p>
+            <p>Research and teaching assistant in project planning and control. Site layout planning analysis for equipment and material flow, and daily site coordination as a project intern.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== BACKGROUND ===================== -->
+  <section class="section wrap" id="background">
+    <div class="section-head">
+      <p class="eyebrow">Background</p>
+      <h2>Education and research</h2>
+    </div>
+
+    <ul class="listing">
+      <li>
+        <span class="yr">2023–26</span>
+        <span>
+          <strong>PhD, Environmental Design and Planning</strong> — Virginia Tech, Myers-Lawson School of Construction · GPA 4.00<br>
+          Dissertation: <em>Mapping Current State and Technological Transformation of the Construction Supply Chain</em>
+        </span>
+      </li>
+      <li>
+        <span class="yr">2023–26</span>
+        <span><strong>M.Eng., Computer Science</strong> — Virginia Tech · GPA 3.85 · Taken simultaneously with the doctorate</span>
+      </li>
+      <li>
+        <span class="yr">2019–22</span>
+        <span><strong>M.Sc., Construction Engineering &amp; Management</strong> — University of Tehran · GPA 18.21/20</span>
+      </li>
+      <li>
+        <span class="yr">2014–19</span>
+        <span><strong>B.Sc., Civil Engineering</strong> — Amirkabir University of Technology · GPA 15.65/20</span>
+      </li>
+    </ul>
+
+    <p style="margin-top:2.5rem">
+      Twelve journal articles and four conference papers on construction supply chains, BIM and
+      digital construction, plus 46 peer reviews for journals including <em>Automation in
+      Construction</em>. The papers closest to this work:
+    </p>
+
+    <ul class="pubs" style="margin-top:1rem">
+      <li class="pub">
+        <span class="yr">2025</span>
+        <div>
+          <p class="title">Agentic AI Simulation of the Bullwhip Effect in Construction Supply Chains<span class="status">Under review</span></p>
+          <p class="venue">Heydari, M., Shojaei, A., McCoy, A., Akanmu, A.</p>
+        </div>
+      </li>
+      <li class="pub">
+        <span class="yr">2025</span>
+        <div>
+          <p class="title">Blockchain applications in the construction supply chain</p>
+          <p class="venue">Heydari, M., Shojaei, A. · <em>Automation in Construction</em>, Vol. 171</p>
+        </div>
+      </li>
+      <li class="pub">
+        <span class="yr">2024</span>
+        <div>
+          <p class="title">BIM framework for efficient material procurement planning</p>
+          <p class="venue">Kalantari, M., Taghaddos, H., Heydari, M. · <em>Automation in Construction</em>, Vol. 168</p>
+        </div>
+      </li>
+    </ul>
+
+    <p class="pub-note">Full list on <a href="#" data-fill="scholar">Google Scholar</a>.</p>
+  </section>
+
+  <!-- ===================== TOOLS ===================== -->
+  <section class="section wrap">
+    <div class="section-head">
+      <p class="eyebrow">Tools</p>
+      <h2>What I work with</h2>
+    </div>
+
+    <div class="kit">
+      <div>
+        <h3 class="subhead">Construction</h3>
+        <ul><li>Primavera P6, MS Project</li><li>Revit, Navisworks, Dynamo</li><li>Procore, Bluebeam</li><li>BIM coordination, RFIs, submittals</li></ul>
+      </div>
+      <div>
+        <h3 class="subhead">AI &amp; machine learning</h3>
+        <ul><li>PyTorch, TensorFlow</li><li>scikit-learn, OpenCV</li><li>LangChain, AutoGen, crewAI</li><li>Claude API</li></ul>
+      </div>
+      <div>
+        <h3 class="subhead">Languages</h3>
+        <ul><li>Python</li><li>SQL</li><li>JavaScript</li><li>Java, R</li></ul>
+      </div>
+      <div>
+        <h3 class="subhead">Data &amp; infrastructure</h3>
+        <ul><li>AWS</li><li>PostgreSQL, MongoDB</li><li>REST APIs, microservices</li><li>Docker, Git</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="section wrap contact" id="contact">
+    <p class="eyebrow">Contact</p>
+    <h2>Open to full-time roles from December 2026.</h2>
+    <p class="lede">
+      Construction technology, project controls, supply chain, or anywhere the built environment
+      needs better data. Email is the fastest way to reach me.
+    </p>
+    <div class="contact-links">
+      <a class="btn btn-primary" href="mailto:Heydari@vt.edu">Email me</a>
+      <a class="btn" href="Heydari-Resume.pdf">Résumé (PDF)</a>
+      <a class="btn" href="https://github.com/MHhey">GitHub</a>
+      <a class="btn" href="#" data-fill="linkedin">LinkedIn</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap colophon">
+  <span>© 2026 Mohammad Hossein Heydari</span>
+  <span>Virginia Tech</span>
+</footer>
+
+<script>
+(function () {
+  var svg = document.getElementById("whipSvg");
+  if (!svg) return;
+
+  var W = 900, MID = 105, TIERS = 5;
+  var NS = "http://www.w3.org/2000/svg";
+  var gT = document.getElementById("whipTiers");
+
+  for (var i = 0; i < TIERS; i++) {
+    var x = i * (W / (TIERS - 1));
+    var grid = document.createElementNS(NS, "line");
+    grid.setAttribute("x1", x); grid.setAttribute("y1", 28);
+    grid.setAttribute("x2", x); grid.setAttribute("y2", 182);
+    grid.setAttribute("stroke", "var(--rule)");
+    grid.setAttribute("stroke-width", "1");
+    grid.setAttribute("stroke-dasharray", "2 5");
+    gT.appendChild(grid);
+
+    var dot = document.createElementNS(NS, "circle");
+    dot.setAttribute("cx", x); dot.setAttribute("cy", MID);
+    dot.setAttribute("r", "5"); dot.setAttribute("class", "whip-node");
+    gT.appendChild(dot);
+  }
+
+  function endLabel(x, text, anchor) {
+    var t = document.createElementNS(NS, "text");
+    t.setAttribute("x", x); t.setAttribute("y", 200);
+    t.setAttribute("text-anchor", anchor);
+    t.setAttribute("class", "whip-end");
+    t.textContent = text;
+    gT.appendChild(t);
+  }
+  endLabel(0, "On site", "start");
+  endLabel(W, "Suppliers", "end");
+
+  var wave  = document.getElementById("whipWave");
+  var fill  = document.getElementById("whipFill");
+  var pulse = document.getElementById("whipPulse");
+
+  // settle = 0 -> distorted and amplifying;  settle = 1 -> level and predictable
+  function amp(x, settle) {
+    var p = x / W;
+    return (6 + Math.pow(p, 1.75) * 70) * (1 - 0.88 * settle);
+  }
+
+  function build(t, settle) {
+    var chaos = 1 - settle, d = "";
+    for (var x = 0; x <= W; x += 6) {
+      var p  = x / W;
+      var f1 = Math.sin((x * 0.045) + t * 1.5);
+      var f2 = Math.sin((x * 0.105) + t * 2.2) * p * 0.62 * chaos;
+      var f3 = Math.sin((x * 0.185) - t * 1.05) * p * p * 0.40 * chaos;
+      var y  = MID - amp(x, settle) * (f1 + f2 + f3) / 1.6;
+      d += (x === 0 ? "M" : "L") + x.toFixed(1) + " " + y.toFixed(1) + " ";
+    }
+    wave.setAttribute("d", d);
+    fill.setAttribute("d", d + "L" + W + " " + MID + " L0 " + MID + " Z");
+    fill.setAttribute("opacity", (0.10 - 0.05 * settle).toFixed(3));
+  }
+
+  function smooth(x) { return x * x * (3 - 2 * x); }
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    build(0.6, 1);
+    return;
+  }
+
+  var CYCLE = 14, t0 = null, raf;
+
+  function frame(now) {
+    if (t0 === null) t0 = now;
+    var secs = (now - t0) / 1000;
+    var t = secs * 1.05;
+    var ph = (secs % CYCLE) / CYCLE;
+
+    var settle;
+    if (ph < 0.24)      settle = 0;
+    else if (ph < 0.44) settle = smooth((ph - 0.24) / 0.20);
+    else if (ph < 0.76) settle = 1;
+    else if (ph < 0.94) settle = 1 - smooth((ph - 0.76) / 0.18);
+    else                settle = 0;
+
+    build(t, settle);
+
+    var prog = (secs / 7) % 1;
+    var px = prog * W;
+    var f1 = Math.sin((px * 0.045) + t * 1.5);
+    pulse.setAttribute("cx", px.toFixed(1));
+    pulse.setAttribute("cy", (MID - amp(px, settle) * f1 / 1.6).toFixed(1));
+    pulse.setAttribute("opacity", prog < 0.05 || prog > 0.95 ? 0 : 0.85);
+
+    raf = requestAnimationFrame(frame);
+  }
+  raf = requestAnimationFrame(frame);
+
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) {
+      cancelAnimationFrame(raf);
+    } else {
+      t0 = null;
+      raf = requestAnimationFrame(frame);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

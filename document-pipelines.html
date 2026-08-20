@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reading project documents at scale — Mohammad Hossein Heydari</title>
+<meta name="description" content="LLM and agentic pipelines converting unstructured construction and property documents into structured records, plus computer vision over site imagery. Intellus Build.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="wordmark" href="../index.html">Mohammad Hossein Heydari</a>
+    <nav aria-label="Sections">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#background">Background</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="doc wrap">
+    <a class="back" href="../index.html#work">← All work</a>
+    <h1>Reading project documents at scale</h1>
+    <p class="lede">
+      Intellus Build is a vertical SaaS platform for construction and property. I build the
+      pipelines that turn permits, drawings, filings and site photography into structured data a
+      reporting system can actually use.
+    </p>
+
+    <div class="doc-meta">
+      <div><span class="k">Role</span><span class="v">Applied AI Engineering Intern</span></div>
+      <div><span class="k">Stack</span><span class="v">Python · LLM &amp; agentic frameworks · Computer vision · AWS · SQL</span></div>
+      <div><span class="k">When</span><span class="v">May 2026 — present</span></div>
+    </div>
+  </section>
+
+  <section class="prose wrap">
+
+    <!-- ==========================================================
+         DEMO VIDEO — when the walkthrough is ready, uncomment this
+         figure and drop in one of the two sources below.
+
+    <figure class="media">
+      <div class="media-frame">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID"
+                title="Pipeline demo" allowfullscreen loading="lazy"></iframe>
+
+        or, self-hosted (put demo.mp4 in this folder):
+        <video controls preload="metadata" poster="demo-poster.jpg">
+          <source src="demo.mp4" type="video/mp4">
+        </video>
+      </div>
+      <figcaption>Pipeline walkthrough, end to end.</figcaption>
+    </figure>
+         ========================================================== -->
+
+
+    <h2>Overview</h2>
+    <p>
+      Project and property records are distributed across permits, filings, drawings and site
+      photography in inconsistent formats, much of it scanned. Downstream reporting requires typed
+      fields. The pipelines close that gap.
+    </p>
+
+    <h2>Components</h2>
+
+    <h3>Document extraction</h3>
+    <ul>
+      <li>LLM and agentic stages decompose documents into retrievable units</li>
+      <li>Units routed to the extraction step suited to their content and layout</li>
+      <li>Output is typed records, not prose, for automated reporting</li>
+      <li>Decomposition localises failures to a field rather than the whole record</li>
+    </ul>
+
+    <h3>Computer vision</h3>
+    <ul>
+      <li>Site imagery processed at scale</li>
+      <li>Model development and validation for extracting insights from construction photography</li>
+    </ul>
+
+    <h3>Architecture and data</h3>
+    <ul>
+      <li>System architecture connecting AI pipelines to backend microservices</li>
+      <li>Storage and retrieval across SQL and AWS, from raw input through deployment</li>
+      <li>REST interfaces between extraction stages and consuming services</li>
+    </ul>
+
+    <h2>Notes</h2>
+    <ul>
+      <li>Single-prompt-per-document does not scale: it fails on long inputs and unusual layouts, and gives no signal distinguishing the two failure modes.</li>
+      <li>Evaluation is the constraint, not extraction. Determining whether a prompt change, model swap or routing rule improved anything requires ground truth that itself needs construction domain knowledge to produce.</li>
+    </ul>
+
+    <p style="margin-top:2.5rem; font-size:0.9rem; color:var(--graphite-2)">
+      Described at a level that covers my contribution without proprietary detail.
+    </p>
+  </section>
+
+  <nav class="wrap pager" aria-label="More work">
+    <a href="agentic-bullwhip.html">← Previous: Why ordering swings grow up the supply chain</a>
+    <a href="image-classification.html">Next: Vision models that run on site hardware →</a>
+  </nav>
+
+</main>
+
+<footer class="wrap colophon">
+  <span>© 2026 Mohammad Hossein Heydari</span>
+  <span><a href="mailto:Heydari@vt.edu">Heydari@vt.edu</a></span>
+</footer>
+
+</body>
+</html>
