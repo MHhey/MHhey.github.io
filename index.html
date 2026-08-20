@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mohammad Hossein Heydari — construction planner and AI engineer</title>
+<meta name="description" content="Construction planner and AI engineer. PhD candidate in construction and M.Eng. student in computer science at Virginia Tech, graduating December 2026.">
+
+<meta property="og:title" content="Mohammad Hossein Heydari">
+<meta property="og:description" content="Construction planner and AI engineer. Virginia Tech, graduating December 2026.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#E4E4DF">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="wordmark" href="index.html">Mohammad Hossein Heydari</a>
+    <nav aria-label="Sections">
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#background">Background</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero wrap">
+    <div class="hero-top">
+    <!-- PORTRAIT: add photo.jpg (square, ~600px) to the repo root, then uncomment.
+    <div class="hero-portrait">
+      <img src="photo.jpg" alt="Mohammad Hossein Heydari" width="600" height="600">
+    </div>
+    -->
+    <div>
+
+    <h1>Construction planner and <em>AI engineer</em>.</h1>
+
+    <p class="lede">
+      PhD candidate in construction and M.Eng. student in computer science at Virginia Tech,
+      graduating December 2026. I have coordinated design and planning on live projects, published
+      research on construction supply chains, and now build AI systems at Intellus Build, a
+      construction SaaS startup.
+    </p>
+
+    <p class="hero-meta">
+      <span><a href="mailto:Heydari@vt.edu">Heydari@vt.edu</a></span>
+      <span><a href="https://github.com/MHhey">GitHub</a></span>
+      <span><a href="#" data-fill="linkedin">LinkedIn</a></span>
+      <span><a href="Heydari-Resume.pdf">Résumé (PDF)</a></span>
+    </p>
+    </div>
+    </div>
+
+    <figure class="flow">
+      <svg viewBox="0 14 900 220" role="img" aria-labelledby="flow-title">
+        <title id="flow-title">Materials converge from distant origins into a hub, AI agents plan and schedule the work, and a building frame rises level by level.</title>
+
+        <!-- ground -->
+        <line x1="0" y1="210" x2="900" y2="210" pathLength="1" class="draw t0"/>
+
+        <!-- SUPPLY: origins and inbound arcs -->
+        <path d="M18 52 Q160 30 300 118"  pathLength="1" class="arc draw t0"/>
+        <path d="M10 120 Q155 106 300 118" pathLength="1" class="arc draw t0"/>
+        <path d="M42 180 Q170 186 300 118" pathLength="1" class="arc draw t0"/>
+        <path d="M92 26 Q210 40 300 118"  pathLength="1" class="arc draw t0"/>
+        <circle cx="18" cy="52"  r="2.5" class="node draw t1" pathLength="1"/>
+        <circle cx="10" cy="120" r="2.5" class="node draw t1" pathLength="1"/>
+        <circle cx="42" cy="180" r="2.5" class="node draw t1" pathLength="1"/>
+        <circle cx="92" cy="26"  r="2.5" class="node draw t1" pathLength="1"/>
+        <circle cx="300" cy="118" r="6" class="node draw t1" pathLength="1"/>
+        <circle cx="300" cy="118" r="2.4" class="hub-core"/>
+
+        <circle r="2.6" class="mat"><animateMotion dur="3.4s" begin="1s"   repeatCount="indefinite" path="M18 52 Q160 30 300 118"/></circle>
+        <circle r="2.6" class="mat"><animateMotion dur="4.1s" begin="1.6s" repeatCount="indefinite" path="M10 120 Q155 106 300 118"/></circle>
+        <circle r="2.6" class="mat"><animateMotion dur="3.7s" begin="2.2s" repeatCount="indefinite" path="M42 180 Q170 186 300 118"/></circle>
+        <circle r="2.6" class="mat"><animateMotion dur="4.5s" begin="1.3s" repeatCount="indefinite" path="M92 26 Q210 40 300 118"/></circle>
+
+        <!-- PLAN: agent cluster and schedule -->
+        <path d="M306 118 Q345 100 388 90" pathLength="1" class="inner draw t2"/>
+        <line x1="392" y1="88"  x2="452" y2="66"  pathLength="1" class="inner draw t2"/>
+        <line x1="452" y1="66"  x2="468" y2="130" pathLength="1" class="inner draw t2"/>
+        <line x1="468" y1="130" x2="404" y2="152" pathLength="1" class="inner draw t2"/>
+        <line x1="404" y1="152" x2="392" y2="88"  pathLength="1" class="inner draw t2"/>
+        <line x1="392" y1="88"  x2="468" y2="130" pathLength="1" class="inner draw t2"/>
+        <circle cx="392" cy="88"  r="5" class="node draw t2" pathLength="1"/>
+        <circle cx="452" cy="66"  r="5" class="node draw t2" pathLength="1"/>
+        <circle cx="468" cy="130" r="5" class="node draw t2" pathLength="1"/>
+        <circle cx="404" cy="152" r="5" class="node draw t2" pathLength="1"/>
+        <circle cx="392" cy="88"  r="5" class="ping p1"/>
+        <circle cx="452" cy="66"  r="5" class="ping p2"/>
+        <circle cx="468" cy="130" r="5" class="ping p3"/>
+        <circle cx="404" cy="152" r="5" class="ping p4"/>
+
+        <line x1="388" y1="174" x2="470" y2="174" pathLength="1" class="inner draw g1" style="stroke-width:3.5; opacity:1"/>
+        <line x1="388" y1="187" x2="516" y2="187" pathLength="1" class="am draw g2"/>
+        <line x1="410" y1="200" x2="500" y2="200" pathLength="1" class="inner draw g3" style="stroke-width:3.5; opacity:1"/>
+
+        <!-- signal to site -->
+        <line x1="474" y1="130" x2="638" y2="130" pathLength="1" class="inner draw t4"/>
+        <circle r="2.4" class="sig"><animateMotion dur="2.6s" begin="3.8s" repeatCount="indefinite" path="M474 130 L638 130"/></circle>
+
+        <!-- BUILD: frame rising level by level -->
+        <line x1="640" y1="210" x2="640" y2="180" pathLength="1" class="draw l1"/>
+        <line x1="695" y1="210" x2="695" y2="180" pathLength="1" class="draw l1"/>
+        <line x1="750" y1="210" x2="750" y2="180" pathLength="1" class="draw l1"/>
+        <line x1="805" y1="210" x2="805" y2="180" pathLength="1" class="draw l1"/>
+        <line x1="860" y1="210" x2="860" y2="180" pathLength="1" class="draw l1"/>
+        <line x1="640" y1="180" x2="860" y2="180" pathLength="1" class="inner draw l1"/>
+
+        <line x1="640" y1="180" x2="640" y2="150" pathLength="1" class="draw l2"/>
+        <line x1="695" y1="180" x2="695" y2="150" pathLength="1" class="draw l2"/>
+        <line x1="750" y1="180" x2="750" y2="150" pathLength="1" class="draw l2"/>
+        <line x1="805" y1="180" x2="805" y2="150" pathLength="1" class="draw l2"/>
+        <line x1="860" y1="180" x2="860" y2="150" pathLength="1" class="draw l2"/>
+        <line x1="640" y1="150" x2="860" y2="150" pathLength="1" class="inner draw l2"/>
+
+        <line x1="640" y1="150" x2="640" y2="120" pathLength="1" class="draw l3"/>
+        <line x1="695" y1="150" x2="695" y2="120" pathLength="1" class="draw l3"/>
+        <line x1="750" y1="150" x2="750" y2="120" pathLength="1" class="draw l3"/>
+        <line x1="805" y1="150" x2="805" y2="120" pathLength="1" class="draw l3"/>
+        <line x1="860" y1="150" x2="860" y2="120" pathLength="1" class="draw l3"/>
+        <line x1="640" y1="120" x2="860" y2="120" pathLength="1" class="inner draw l3"/>
+
+        <line x1="640" y1="120" x2="640" y2="90" pathLength="1" class="draw l4"/>
+        <line x1="695" y1="120" x2="695" y2="90" pathLength="1" class="draw l4"/>
+        <line x1="750" y1="120" x2="750" y2="90" pathLength="1" class="draw l4"/>
+        <line x1="805" y1="120" x2="805" y2="90" pathLength="1" class="draw l4"/>
+        <line x1="860" y1="120" x2="860" y2="90" pathLength="1" class="draw l4"/>
+        <line x1="640" y1="90" x2="860" y2="90" pathLength="1" class="inner draw l4"/>
+
+        <line x1="640" y1="90" x2="640" y2="60" pathLength="1" class="draw l5"/>
+        <line x1="695" y1="90" x2="695" y2="60" pathLength="1" class="draw l5"/>
+        <line x1="750" y1="90" x2="750" y2="60" pathLength="1" class="draw l5"/>
+        <line x1="805" y1="90" x2="805" y2="60" pathLength="1" class="draw l5"/>
+        <line x1="860" y1="90" x2="860" y2="60" pathLength="1" class="draw l5"/>
+        <line x1="640" y1="60" x2="860" y2="60" pathLength="1" class="am draw t8"/>
+        <circle cx="750" cy="48" r="3" class="beacon"/>
+
+        <!-- zone labels -->
+        <text x="150" y="228" text-anchor="middle" class="zone z1">Supply</text>
+        <text x="452" y="228" text-anchor="middle" class="zone z2">Plan</text>
+        <text x="750" y="228" text-anchor="middle" class="zone z3">Build</text>
+      </svg>
+      <figcaption class="flow-cap">
+        Materials flow in, AI agents plan the work, and the building goes up. That flow is what I
+        work on.
+      </figcaption>
+    </figure>
+  </section>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section class="section wrap" id="projects">
+    <div class="section-head">
+      <p class="eyebrow">Portfolio</p>
+      <h2>Selected projects</h2>
+    </div>
+
+    <div class="work">
+
+      <article class="card card-feature">
+        <p class="kicker">PhD research · Under review, 2025</p>
+        <h3><a href="projects/agentic-bullwhip.html">Agentic AI simulation of construction supply chains</a></h3>
+        <p>
+          Modeled five supply chain tiers as autonomous AI agents, each ordering from limited local
+          information. Measured how small orders placed on site amplify into large swings for
+          suppliers, and how far shared information reduces the distortion.
+        </p>
+        <ul class="tags"><li>Multi-agent AI</li><li>AutoGen</li><li>crewAI</li><li>Python</li><li>Simulation</li></ul>
+        <p class="readmore">Details →</p>
+      </article>
+
+      <article class="card">
+        <p class="kicker">Intellus Build · 2026</p>
+        <h3><a href="projects/document-pipelines.html">Construction document and imagery pipelines</a></h3>
+        <p>
+          Built LLM pipelines that convert permits, drawings, and filings into structured records
+          for automated reporting. Applied computer vision to site imagery at scale and connected
+          both to backend services on AWS and SQL.
+        </p>
+        <ul class="tags"><li>LLM pipelines</li><li>Computer vision</li><li>AWS</li><li>SQL</li></ul>
+        <p class="readmore">Details →</p>
+      </article>
+
+      <article class="card">
+        <p class="kicker">Computer vision</p>
+        <h3><a href="projects/image-classification.html">Efficient image classification for field hardware</a></h3>
+        <p>
+          Fine-tuned a MobileNetV2 classifier with staged transfer learning on CIFAR-100. Optimized
+          for the accuracy, latency, and power limits of cameras and handheld devices used on site.
+        </p>
+        <ul class="tags"><li>TensorFlow</li><li>Keras</li><li>MobileNetV2</li><li>Edge inference</li></ul>
+        <p class="readmore">Details →</p>
+      </article>
+
+      <article class="card">
+        <p class="kicker">Full stack · 2025</p>
+        <h3><a href="projects/housing-platform.html">Housing listing and booking platform</a></h3>
+        <p>
+          Led a six-person team building a React, Node.js, and PostgreSQL platform with
+          authentication, listings, and real-time booking. Managed requirements, sprint planning,
+          and delivery across two semesters.
+        </p>
+        <ul class="tags"><li>React</li><li>Node.js</li><li>PostgreSQL</li><li>Jira</li></ul>
+        <p class="readmore">Details →</p>
+      </article>
+
+    </div>
+
+    <ul class="listing" style="margin-top:2rem">
+      <li><span class="yr">2024</span> <span><strong>Progress-based payment automation.</strong> Designed a blockchain payment system that releases construction funds against verified work, cutting approval delay for subcontractors.</span></li>
+      <li><span class="yr">2021</span> <span><strong>Site layout planning simulation.</strong> Built a hybrid simulation of equipment and material flow on congested sites. Published in <em>Construction Innovation</em> and the basis of a 2023 Allan Myers student competition win.</span></li>
+    </ul>
+  </section>
+
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section class="section band" id="experience">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Experience</p>
+        <h2>Where I've worked</h2>
+      </div>
+
+      <div class="roles">
+
+        <article class="role">
+          <p class="when">May 2026 – Present</p>
+          <div>
+            <h3>Applied AI Engineering Intern</h3>
+            <p class="where">Intellus Build, Inc. · San Francisco, CA</p>
+            <p>Built pipelines converting unstructured construction and property documents into structured data for automated reporting. Designed the architecture connecting them to backend services, and applied computer vision to site imagery at scale.</p>
+          </div>
+        </article>
+
+        <article class="role">
+          <p class="when">Jan 2023 – Present</p>
+          <div>
+            <h3>Graduate Research Assistant</h3>
+            <p class="where">Virginia Tech · Myers-Lawson School of Construction</p>
+            <p>Studied where information breaks down between owners, contractors, and suppliers, how the gaps surface as cost and delay, and whether digital systems measurably close them. Contributed to NSF-funded interdisciplinary research.</p>
+          </div>
+        </article>
+
+        <article class="role">
+          <p class="when">Jan 2026 – Present</p>
+          <div>
+            <h3>Teaching Assistant, Process Planning and Design</h3>
+            <p class="where">Virginia Tech</p>
+            <p>Taught scheduling in Primavera P6 to an undergraduate course of 89 students, alongside robotics demonstrations, grading, and office hours.</p>
+          </div>
+        </article>
+
+        <article class="role">
+          <p class="when">Jun 2020 – Dec 2021</p>
+          <div>
+            <h3>Construction Design Consultant</h3>
+            <p class="where">Malekan Engineering Group · Tehran</p>
+            <p>Coordinated BIM models across design teams, prepared submittals, and resolved RFIs for compliance. Assessed cost and carbon impact of design alternatives at early project stages.</p>
+          </div>
+        </article>
+
+        <article class="role">
+          <p class="when">2019 – 2022</p>
+          <div>
+            <h3>Earlier</h3>
+            <p class="where">University of Tehran · Tecnosa</p>
+            <p>Research and teaching assistant in project planning and control. Analyzed site layout for equipment and material flow, and supported daily site coordination as a project intern.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== BACKGROUND ===================== -->
+  <section class="section wrap" id="background">
+    <div class="section-head">
+      <p class="eyebrow">Background</p>
+      <h2>Education and research</h2>
+    </div>
+
+    <ul class="listing">
+      <li>
+        <span class="yr">2023–26</span>
+        <span>
+          <strong>PhD, Environmental Design and Planning</strong> · Virginia Tech, Myers-Lawson School of Construction · GPA 4.00<br>
+          Dissertation: <em>Mapping Current State and Technological Transformation of the Construction Supply Chain</em>
+        </span>
+      </li>
+      <li>
+        <span class="yr">2023–26</span>
+        <span><strong>M.Eng., Computer Science</strong> · Virginia Tech · GPA 3.85 · Taken simultaneously with the doctorate</span>
+      </li>
+      <li>
+        <span class="yr">2019–22</span>
+        <span><strong>M.Sc., Construction Engineering and Management</strong> · University of Tehran · GPA 18.21/20</span>
+      </li>
+      <li>
+        <span class="yr">2014–19</span>
+        <span><strong>B.Sc., Civil Engineering</strong> · Amirkabir University of Technology · GPA 15.65/20</span>
+      </li>
+    </ul>
+
+    <p style="margin-top:2.5rem">
+      Twelve journal articles and four conference papers on construction supply chains, BIM, and
+      digital construction, plus 46 peer reviews for journals including <em>Automation in
+      Construction</em>. The papers closest to this work:
+    </p>
+
+    <ul class="pubs" style="margin-top:1rem">
+      <li class="pub">
+        <span class="yr">2025</span>
+        <div>
+          <p class="title">Agentic AI Simulation of the Bullwhip Effect in Construction Supply Chains<span class="status">Under review</span></p>
+          <p class="venue">Heydari, M., Shojaei, A., McCoy, A., Akanmu, A.</p>
+        </div>
+      </li>
+      <li class="pub">
+        <span class="yr">2025</span>
+        <div>
+          <p class="title">Blockchain applications in the construction supply chain</p>
+          <p class="venue">Heydari, M., Shojaei, A. · <em>Automation in Construction</em>, Vol. 171</p>
+        </div>
+      </li>
+      <li class="pub">
+        <span class="yr">2024</span>
+        <div>
+          <p class="title">BIM framework for efficient material procurement planning</p>
+          <p class="venue">Kalantari, M., Taghaddos, H., Heydari, M. · <em>Automation in Construction</em>, Vol. 168</p>
+        </div>
+      </li>
+    </ul>
+
+    <p class="pub-note">Full list on <a href="#" data-fill="scholar">Google Scholar</a>.</p>
+  </section>
+
+  <!-- ===================== TOOLS ===================== -->
+  <section class="section wrap">
+    <div class="section-head">
+      <p class="eyebrow">Tools</p>
+      <h2>What I work with</h2>
+    </div>
+
+    <div class="kit">
+      <div>
+        <h3 class="subhead">Construction</h3>
+        <ul><li>Primavera P6, MS Project</li><li>Revit, Navisworks, Dynamo</li><li>Procore, Bluebeam</li><li>BIM coordination, RFIs, submittals</li></ul>
+      </div>
+      <div>
+        <h3 class="subhead">AI and machine learning</h3>
+        <ul><li>PyTorch, TensorFlow</li><li>scikit-learn, OpenCV</li><li>LangChain, AutoGen, crewAI</li><li>Claude API</li></ul>
+      </div>
+      <div>
+        <h3 class="subhead">Languages</h3>
+        <ul><li>Python</li><li>SQL</li><li>JavaScript</li><li>Java, R</li></ul>
+      </div>
+      <div>
+        <h3 class="subhead">Data and infrastructure</h3>
+        <ul><li>AWS</li><li>PostgreSQL, MongoDB</li><li>REST APIs, microservices</li><li>Docker, Git</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="section wrap contact" id="contact">
+    <p class="eyebrow">Contact</p>
+    <h2>Open to full-time roles from December 2026.</h2>
+    <p class="lede">
+      Construction technology, project controls, supply chain, or anywhere the built environment
+      needs better data. Email is the fastest way to reach me.
+    </p>
+    <div class="contact-links">
+      <a class="btn btn-primary" href="mailto:Heydari@vt.edu">Email me</a>
+      <a class="btn" href="Heydari-Resume.pdf">Résumé (PDF)</a>
+      <a class="btn" href="https://github.com/MHhey">GitHub</a>
+      <a class="btn" href="#" data-fill="linkedin">LinkedIn</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap colophon">
+  <span>© 2026 Mohammad Hossein Heydari</span>
+  <span>Virginia Tech</span>
+</footer>
+
+</body>
+</html>
