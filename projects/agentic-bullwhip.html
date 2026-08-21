@@ -10,6 +10,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
+<style>
+  .shot { margin: 2rem 0; }
+  .shot img {
+    width: 100%;
+    max-width: 620px;
+    height: auto;
+    display: block;
+    border: 1px solid var(--rule-strong);
+    background: #fff;
+  }
+  .shot.wide img { max-width: 100%; }
+  .shot figcaption {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    color: var(--graphite-2);
+    margin-top: 0.6rem;
+  }
+</style>
 </head>
 <body>
 
@@ -33,7 +52,7 @@
     <h1>Agentic AI simulation of construction supply chains</h1>
     <p class="lede">
       Modeled a five-tier construction supply chain as autonomous LLM agents, each ordering from only
-      what it can see, and measured how a small change on site grows into large swings upstream — and
+      what it can see, and measured how a small change on site grows into large swings upstream, and
       what actually reduces it.
     </p>
 
@@ -57,76 +76,112 @@
         <circle id="whipPulse" r="4.5" fill="var(--teal)" opacity="0"></circle>
       </svg>
       <figcaption class="whip-cap">
-        Order variance amplifying tier by tier under limited information, the open-loop regime in
-        this study.
+        The bullwhip effect happens in construction supply chains.
       </figcaption>
     </figure>
 
 
     <h2>Overview</h2>
     <p>
-      The bullwhip effect is when order variance grows as it travels upstream: a small change on site
-      becomes a larger one for the distributor, and larger still for the supplier. Construction has
-      the same tiered structure as manufacturing but weaker information flow — work is organised into
-      temporary project coalitions, and each tier usually sees only its immediate neighbours, so it
-      orders defensively against uncertainty it cannot resolve.
+      The bullwhip effect is when small changes in demand grow larger as they move up a supply chain.
+      A modest shift on site becomes a bigger order for the distributor and a bigger one again for the
+      supplier, which shows up as excess inventory, expediting costs, and idle crews. Construction is
+      unusually exposed to it, because project teams are temporary and each firm typically sees only
+      the firms it buys from and sells to.
     </p>
     <p>
-      Traditional agent-based models encode each tier's behaviour as a fixed ordering rule. This study
-      replaces those rules with autonomous LLM agents that reason over the information each tier
-      actually holds and return a structured ordering decision, so behaviour adapts to context rather
-      than following a preset heuristic.
+      The standard advice is to share more information across the chain. This study finds that advice
+      is incomplete. What mattered was not how much information agents could see but which kind.
+      Letting every tier see actual demand suppressed amplification. Letting them see each other's
+      inventory and backlog often made it worse, because agents read upstream trouble as a reason to
+      build stock ahead of a shortage.
+    </p>
+    <p>
+      Instead of giving each firm a fixed ordering rule, as conventional models do, this simulation
+      gives each one an AI agent that reads its own position each week and decides how to order. That
+      is what allowed the defensive behaviour to emerge rather than be assumed.
     </p>
 
     <h2>How it is built</h2>
     <p>
-      Five agents represent the tiers of a construction supply chain — Contractor, Procurement Office,
-      Third-Party Logistics (3PL), Distributor, and Supplier. Each agent holds its own inventory,
-      backlog, and in-transit state. On every time step an agent reads the slice of the system it is
-      allowed to see, calls an LLM to decide how to order, and the simulator settles the resulting
-      material and information flow deterministically before the next step.
+      The chain is modelled as five tiers, running from the site through procurement and logistics to
+      the supplier. Each tier is an agent holding its own inventory, backlog, and in-transit stock.
+      On every weekly step an agent reads the slice of the system its information regime allows it to
+      see, decides how aggressively to order, and the simulator then settles the resulting material
+      movements and lead times deterministically before the next step begins.
+    </p>
+
+    <figure class="shot">
+      <img src="figures/sim-cycle.png" alt="Diagram of one simulation step, showing local, shared, and true state feeding parallel agent decisions, then a system update that schedules arrivals and produces the next state" width="975" height="713" loading="lazy">
+      <figcaption>One step of the simulation cycle.</figcaption>
+    </figure>
+
+    <p>
+      What each agent decides is a small vector of ordering behaviour rather than a raw quantity. It
+      sets how strongly to react to recent demand, how much safety stock to hold, how to round the
+      order, whether to expedite, and what to share with neighbours. The order quantity itself falls
+      out of a standard base stock calculation, so the arithmetic stays outside the model.
     </p>
     <ul>
-      <li><strong>Agents</strong> — 5 tiers: Contractor, Procurement Office, 3PL, Distributor, Supplier.</li>
-      <li><strong>Decision model</strong> — OpenAI GPT-4o-mini, low temperature, returning a schema-constrained JSON vector of ordering coefficients.</li>
-      <li><strong>Simulation core</strong> — Python; deterministic inventory accounting, order settlement, and lead times.</li>
-      <li><strong>Agent state</strong> — role prompt, inventory, backlog, in-transit pipeline, and a regime-dependent view of neighbours.</li>
+      <li><strong>Decision model</strong> an LLM at low temperature, returning a schema-constrained JSON vector of ordering coefficients.</li>
+      <li><strong>Simulation core</strong> Python, with deterministic inventory accounting, order settlement, and fixed lead times per tier.</li>
+      <li><strong>Agent state</strong> role prompt, on-hand inventory, backlog, in-transit pipeline, and a regime-dependent view of other tiers.</li>
+      <li><strong>Why the split matters</strong> agents decide and the simulator settles, so an arithmetic slip by the model cannot contaminate the measured variance.</li>
     </ul>
 
     <h2>The scenarios</h2>
     <p>
-      The study runs a full factorial of three dimensions — 12 scenarios in total — to see what
-      actually drives amplification:
+      Twelve scenarios cover every combination of three things that plausibly drive amplification.
+      Each one runs ten times with different random seeds.
     </p>
     <ul>
-      <li><strong>Network topology</strong> — linear forward chains vs. closed-loop chains that route recovered material back to the supplier (a circular-economy configuration).</li>
-      <li><strong>Project scope</strong> — single project vs. multiple concurrent projects sharing logistics.</li>
-      <li><strong>Information regime</strong> — local (neighbours only), global (system-wide state), and efficient (a curated signal shared across tiers).</li>
+      <li><strong>Network shape</strong> a conventional forward chain, or a closed-loop chain that recovers material and routes it back to the supplier.</li>
+      <li><strong>Project scope</strong> a single project, or several concurrent projects sharing the same logistics and supplier.</li>
+      <li><strong>Information regime</strong> local, where a tier sees only its immediate neighbours. Global, where every tier sees inventory and backlog across the whole chain. Coordinated, where tiers see actual demand instead of inventory and backlog.</li>
     </ul>
+
+    <figure class="shot wide">
+      <img src="figures/topologies.png" alt="Four network diagrams showing linear and closed-loop supply chains in single-project and multi-project configurations" width="975" height="548" loading="lazy">
+      <figcaption>The four network configurations tested.</figcaption>
+    </figure>
+
     <p>
-      Demand is grounded in real biweekly steel-procurement data from EU Horizon 2020 building
-      projects. A supply disruption is injected at week 30 — lead times extended for eight weeks — to
-      test how each configuration responds to a shock.
+      Demand comes from real biweekly steel procurement records for three EU Horizon 2020 building
+      projects rather than a synthetic pattern. Partway through each run a supply disruption extends
+      supplier lead times for eight weeks, which is what exposes how each configuration behaves under
+      stress.
     </p>
 
     <h2>What it found</h2>
-    <ul>
-      <li><strong>Content over access</strong> — the type of signal shared matters more than whether information is shared at all — an efficient, curated signal damped amplification far more than simply exposing all tiers to global state, which often <em>increased</em> it by triggering defensive stockpiling.</li>
-      <li><strong>Topology is contingent</strong> — closed-loop chains amplified more than linear ones in single projects, but became a source of resilience once multiple projects shared recovered material.</li>
-      <li><strong>Anticipatory stockpiling</strong> — under local visibility, agents built inventory weeks ahead of the week-30 disruption — limited sight lines produced precautionary ordering that amplified supply risk.</li>
-      <li><strong>Validated</strong> — agent behaviour reproduced across 10 independent seeds, and matched empirical construction lead-time ranges in 80% of observations against an external UK builders'-merchant dataset.</li>
-    </ul>
 
-    <h2>Method notes</h2>
+    <figure class="shot wide">
+      <img src="figures/results.png" alt="Four charts of bullwhip ratio by supply chain role, comparing local, global, and coordinated information sharing across linear and closed-loop, single and multi-project networks" width="975" height="607" loading="lazy">
+      <figcaption>Bullwhip ratio by tier under each information regime. A flat line means variance is not amplifying upstream.</figcaption>
+    </figure>
+
+    <p>
+      The clearest result is the shape of the green line. Under coordinated sharing, where agents see
+      actual demand, the bullwhip ratio stays roughly flat from the site to the supplier in all four
+      network configurations. Under the other two regimes it climbs steeply with every tier. Sharing
+      the right signal did not just reduce amplification, it largely stopped it propagating.
+    </p>
     <ul>
-      <li>Inventory accounting sits outside the agents: agents decide, the simulator settles. Keeping the arithmetic out of the model prevents LLM errors from contaminating the measured variance.</li>
-      <li>Runs repeat across seeds. Because agent decisions are non-deterministic, results are reported as distributions rather than single traces.</li>
-      <li>Agent prompts are versioned with results, since a prompt change is a change to the experimental condition.</li>
+      <li><strong>More visibility was not better</strong> giving every tier sight of inventory and backlog across the chain produced higher amplification than showing them only their neighbours, in three of the four configurations. Seeing upstream strain prompted agents to build stock ahead of a shortage rather than reassuring them.</li>
+      <li><strong>Content beat scope</strong> the regime that helped was the one that changed what agents saw, not how far they could see. Demand visibility addressed the underlying forecasting problem. Inventory visibility fed the anticipatory ordering that causes the effect in the first place.</li>
+      <li><strong>Topology depends on scale</strong> closed-loop chains amplified more than linear ones on a single project, where recovery flows add coordination burden without much return. Across several concurrent projects that reversed, and the recovered material became a buffer instead.</li>
+      <li><strong>Stockpiling started before the shock</strong> under local visibility, agents built inventory in the weeks before the disruption arrived, then drew it down during the constraint. Under coordinated sharing, orders tracked demand throughout and that anticipatory spike did not appear.</li>
+      <li><strong>Checks on the model</strong> amplification patterns held across ten independent runs per scenario, and lead times generated by the agents fell within empirically observed construction ranges in 80% of comparisons against an external UK builders' merchant dataset.</li>
     </ul>
+    <p>
+      One caveat worth stating plainly. The ratios in the closed-loop single-project case run high,
+      and they describe variance amplification under the modelled conditions rather than magnitudes
+      measured on real projects. The comparison between regimes is the finding. The absolute numbers
+      are not an estimate of what any given supply chain would show.
+    </p>
 
     <h2>Paper</h2>
     <p>
-      <em>Agentic AI Simulation of Bullwhip Effect in Construction Supply Chains</em> — Heydari,
+      <em>Agentic AI Simulation of Bullwhip Effect in Construction Supply Chains</em>. Heydari,
       Shojaei, McCoy, Akanmu (under review, 2025). Simulation code is available in the
       <a href="https://github.com/MHhey/Bullwhip-Simulation-in-Construction-Supply-Chains" target="_blank" rel="noopener">GitHub repository</a>.
     </p>
