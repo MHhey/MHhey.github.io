@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Robotic arms in a construction planning classroom — Mohammad Hossein Heydari</title>
+<meta name="description" content="Built and programmed open-source LeRobot arms and ran hands-on automation demonstrations for 89 construction undergraduates at Virginia Tech.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<style>
+  /* photo grid — scoped to this page */
+  .gallery { margin: 2.25rem 0 0; max-width: var(--measure); }
+  .gallery-grid { display: grid; gap: 0.75rem; grid-template-columns: 1fr; }
+  @media (min-width: 640px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+  .gallery-grid img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border: 1px solid var(--rule-strong);
+    filter: grayscale(1) contrast(1.04);
+    transition: filter 200ms ease;
+  }
+  .gallery-grid img:hover { filter: grayscale(0) contrast(1); }
+  .gallery figcaption {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    color: var(--graphite-2);
+    margin-top: 0.75rem;
+  }
+  @media print { .gallery { display: none; } }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="wordmark" href="../index.html">Mohammad Hossein Heydari</a>
+    <nav aria-label="Sections">
+      <a href="../index.html#projects">Work</a>
+      <a href="../index.html#background">Background</a>
+      <a href="../beyond.html">Beyond the work</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="doc wrap">
+    <a class="back" href="../index.html#projects">← All work</a>
+    <h1>Robotic arms in a construction planning classroom</h1>
+    <p class="lede">
+      Built and programmed a set of open-source robotic arms and brought them into a construction
+      planning course, so students could work a machine with their hands instead of reading about
+      automation in a slide.
+    </p>
+
+    <div class="doc-meta">
+      <div><span class="k">Role</span><span class="v">Teaching assistant: build, programming, instruction</span></div>
+      <div><span class="k">Course</span><span class="v">Process Planning and Design · 89 students</span></div>
+      <div><span class="k">When</span><span class="v">Spring 2026</span></div>
+    </div>
+  </section>
+
+  <section class="prose wrap">
+
+    <h2>Overview</h2>
+    <p>
+      Construction students hear a great deal about automation and see very little of it. Site
+      robotics is discussed as something arriving soon, in a lecture, in the abstract. The gap
+      between that and a machine on a bench you can drive yourself is most of the learning.
+    </p>
+    <p>
+      For the spring section of Process Planning and Design I assembled a set of
+      <strong>LeRobot</strong> arms — an open-source, low-cost robotics platform — and brought them
+      into class as a hands-on station. Students drove the arms directly, recorded their own
+      demonstrations, and watched a task get repeated back.
+    </p>
+
+    <!-- PHOTOS: add images to a photos/ folder inside projects/, then uncomment.
+         Two or four landscape shots work best.
+    <figure class="gallery">
+      <div class="gallery-grid">
+        <img src="photos/robots-1.jpg" alt="Students working with a robotic arm in class" width="1200" height="900" loading="lazy">
+        <img src="photos/robots-2.jpg" alt="Robotic arm set up on a classroom bench" width="1200" height="900" loading="lazy">
+      </div>
+      <figcaption>Process Planning and Design, spring 2026.</figcaption>
+    </figure>
+    -->
+
+    <h2>What was involved</h2>
+    <ol>
+      <li><strong>Build.</strong> Assembled and calibrated the arms from the open-source hardware design, including servo setup and range checks.</li>
+      <li><strong>Software.</strong> Set up the control stack and the teleoperation and record-and-replay workflow so a first-time user could get a result in a few minutes.</li>
+      <li><strong>Classroom.</strong> Ran the station across sessions, briefed students, supervised handling, and reset the hardware between groups.</li>
+      <li><strong>Framing.</strong> Tied the demonstration back to the course material: what a repeated task means for sequencing, cycle time and labour planning on a real project.</li>
+    </ol>
+
+    <h2>Why it belongs in a planning course</h2>
+    <p>
+      Planning a task and automating a task ask the same question: what exactly are the steps, in
+      what order, with what tolerance for variation. Students who had to teach an arm to repeat a
+      motion found the gaps in their own task breakdown quickly, which is a cheaper way to learn it
+      than on a jobsite.
+    </p>
+
+    <h2>Notes</h2>
+    <ul>
+      <li>The hardware is deliberately inexpensive and open-source, which makes the exercise repeatable for a department without a robotics budget.</li>
+      <li>Sessions were supervised throughout, with the working envelope kept clear during operation.</li>
+    </ul>
+
+  </section>
+
+  <nav class="wrap pager" aria-label="More work">
+    <a href="../index.html#projects">← All work</a>
+    <a href="image-classification.html">Next: Image recognition on site hardware →</a>
+  </nav>
+
+</main>
+
+<footer class="wrap colophon">
+  <span>© 2026 Mohammad Hossein Heydari</span>
+  <span><a href="mailto:Heydari@vt.edu">Heydari@vt.edu</a></span>
+</footer>
+
+</body>
+</html>
