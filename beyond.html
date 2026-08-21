@@ -11,32 +11,26 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  /* photo grid — scoped to this page so style.css stays untouched */
-  .gallery { margin: 2.25rem 0 0; }
-  .gallery-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    align-items: flex-start;
-  }
-  .gallery-grid img {
-    display: block;
+  /* photos — scoped to this page so style.css stays untouched */
+  .shot { margin: 2.25rem 0; max-width: var(--measure); }
+  .shot img {
     width: 100%;
-    max-width: 340px;
+    max-width: 480px;
     height: auto;
+    display: block;
     border: 1px solid var(--rule-strong);
     filter: grayscale(1) contrast(1.04);
     transition: filter 200ms ease;
   }
-  .gallery-grid img:hover { filter: grayscale(0) contrast(1); }
-  .gallery figcaption {
+  .shot img:hover { filter: grayscale(0) contrast(1); }
+  .shot figcaption {
     font-family: var(--mono);
     font-size: 0.72rem;
     letter-spacing: 0.06em;
     color: var(--graphite-2);
-    margin-top: 0.75rem;
+    margin-top: 0.6rem;
   }
-  @media print { .gallery { display: none; } }
+  @media print { .shot { display: none; } }
 </style>
 </head>
 <body>
@@ -61,9 +55,6 @@
   <section class="doc wrap">
     <a class="back" href="index.html">← Home</a>
     <h1>Beyond the work</h1>
-    <p class="lede">
-      Construction skills donated, trails rebuilt, and service to the field I publish in.
-    </p>
   </section>
 
   <section class="prose wrap">
@@ -74,26 +65,26 @@
       <li>
         <span class="yr">Blacksburg</span>
         <span>
-          <strong>Habitat for Humanity.</strong> Volunteer construction on homes for local families —
-          deck building, and loading and unloading materials for the build site. The same trades I
-          coordinate on paper, done with my own hands.
+          <strong>Habitat for Humanity.</strong> Volunteer construction on homes for local families,
+          deck building, and loading and unloading materials for the build site.
         </span>
       </li>
       <li>
         <span class="yr">Blacksburg</span>
         <span>
-          <strong>Outdoor Club at Virginia Tech.</strong> Trail construction and maintenance —
-          clearing, grading, drainage, and step building on public trails across southwest Virginia.
+          <strong>Outdoor Club at Virginia Tech.</strong> Trail construction and maintenance.
         </span>
       </li>
     </ul>
 
-    <figure class="gallery">
-      <div class="gallery-grid">
-        <img src="photos/trail-1.jpg" alt="Trail work with the Outdoor Club at Virginia Tech, wearing a hard hat in the woods" width="1200" height="900" loading="lazy">
-        <img src="photos/trail-2.jpg" alt="Trail blaze marker on the trail, Outdoor Club at Virginia Tech" width="600" height="800" loading="lazy">
-      </div>
-      <figcaption>Trail building in southwest Virginia.</figcaption>
+    <figure class="shot">
+      <img src="photos/trail-1.jpg" alt="Trail work with the Outdoor Club at Virginia Tech, wearing a hard hat in the woods" width="1200" height="900" loading="lazy">
+      <figcaption>Appalachian Trail maintenance, summer 2026.</figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img src="photos/trail-2.jpg" alt="Trail blaze marker on the Appalachian Trail" width="600" height="800" loading="lazy">
+      <figcaption>Appalachian Trail maintenance, summer 2026.</figcaption>
     </figure>
 
     <h2>Honours</h2>
