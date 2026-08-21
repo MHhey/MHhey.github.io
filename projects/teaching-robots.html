@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Robotic arms in a construction planning classroom — Mohammad Hossein Heydari</title>
-<meta name="description" content="Built and programmed open-source LeRobot arms and ran hands-on automation demonstrations for 89 construction undergraduates at Virginia Tech.">
+<meta name="description" content="Built and programmed 20 open-source LeRobot arms and ran a hands-on pick-and-place exercise for 89 construction undergraduates, feeding their task estimates into a FlexSim scheduling simulation.">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,7 +44,6 @@
     <nav aria-label="Sections">
       <a href="../index.html#projects">Work</a>
       <a href="../index.html#background">Background</a>
-      <a href="../beyond.html">Beyond the work</a>
       <a href="../index.html#contact">Contact</a>
     </nav>
   </div>
@@ -56,14 +55,15 @@
     <a class="back" href="../index.html#projects">← All work</a>
     <h1>Robotic arms in a construction planning classroom</h1>
     <p class="lede">
-      Built and programmed a set of open-source robotic arms and brought them into a construction
-      planning course, so students could work a machine with their hands instead of reading about
-      automation in a slide.
+      Built and programmed 20 open-source robotic arms and ran a hands-on task in a construction
+      planning course, then fed what students measured on the physical task into a scheduling
+      simulation, so the estimate came from a machine they had actually run.
     </p>
 
     <div class="doc-meta">
       <div><span class="k">Role</span><span class="v">Teaching assistant: build, programming, instruction</span></div>
       <div><span class="k">Course</span><span class="v">Process Planning and Design · 89 students</span></div>
+      <div><span class="k">Stack</span><span class="v">LeRobot SO-101 · Raspberry Pi 5 · FlexSim</span></div>
       <div><span class="k">When</span><span class="v">Spring 2026</span></div>
     </div>
   </section>
@@ -72,47 +72,49 @@
 
     <h2>Overview</h2>
     <p>
-      Construction students hear a great deal about automation and see very little of it. Site
-      robotics is discussed as something arriving soon, in a lecture, in the abstract. The gap
-      between that and a machine on a bench you can drive yourself is most of the learning.
+      Construction students hear a great deal about automation and see very little of it.
+      Site robotics gets discussed as something arriving soon, in the abstract, in a lecture. The
+      gap between that and a machine on a bench you drive yourself is most of the learning, and it
+      is also where an estimate stops being a guess.
     </p>
     <p>
-      For the spring section of Process Planning and Design I assembled a set of
-      <strong>LeRobot</strong> arms — an open-source, low-cost robotics platform — and brought them
-      into class as a hands-on station. Students drove the arms directly, recorded their own
-      demonstrations, and watched a task get repeated back.
+      For Process Planning and Design I built a fleet of 20
+      <a href="https://huggingface.co/docs/lerobot/en/so101" target="_blank" rel="noopener">LeRobot SO-101</a>
+      arms, an open-source robotics platform, each driven by a Raspberry Pi 5. Students worked in
+      groups with the arms directly, on a task with a real time cost, and used that time cost as an
+      input to a scheduling exercise rather than an assumption pulled from a textbook.
     </p>
 
-    <!-- PHOTOS: add images to a photos/ folder inside projects/, then uncomment.
-         Two or four landscape shots work best.
     <figure class="gallery">
       <div class="gallery-grid">
-        <img src="photos/robots-1.jpg" alt="Students working with a robotic arm in class" width="1200" height="900" loading="lazy">
-        <img src="photos/robots-2.jpg" alt="Robotic arm set up on a classroom bench" width="1200" height="900" loading="lazy">
+        <img src="photos/robots-1.jpg" alt="A set of LeRobot SO-101 arms on a desk, red and grey 3D-printed builds with visible wiring, being inspected by hand" width="1400" height="1867" loading="lazy">
+        <img src="photos/robots-2.jpg" alt="Close-up of a Raspberry Pi 5 controller being wired up for the LeRobot arms" width="1400" height="2488" loading="lazy">
       </div>
-      <figcaption>Process Planning and Design, spring 2026.</figcaption>
+      <figcaption>20 arms assembled and wired to individual Raspberry Pi 5 controllers, Process Planning and Design, spring 2026.</figcaption>
     </figure>
-    -->
 
     <h2>What was involved</h2>
     <ol>
-      <li><strong>Build.</strong> Assembled and calibrated the arms from the open-source hardware design, including servo setup and range checks.</li>
-      <li><strong>Software.</strong> Set up the control stack and the teleoperation and record-and-replay workflow so a first-time user could get a result in a few minutes.</li>
-      <li><strong>Classroom.</strong> Ran the station across sessions, briefed students, supervised handling, and reset the hardware between groups.</li>
-      <li><strong>Framing.</strong> Tied the demonstration back to the course material: what a repeated task means for sequencing, cycle time and labour planning on a real project.</li>
+      <li><strong>Build.</strong> Assembled and calibrated 20 SO-101 arms from the open-source hardware design — servo setup, wiring, range checks — and set up a Raspberry Pi 5 as the controller for each.</li>
+      <li><strong>Task.</strong> Students were given a project brief and asked to estimate and schedule it. The physical component was a pick-and-place task: lifting plastic bricks and placing them at a specified location with the arm.</li>
+      <li><strong>Simulation.</strong> Students carried what they measured running the task into <strong>FlexSim</strong>, building a scheduling simulation around it instead of estimating cycle time from assumption.</li>
+      <li><strong>Classroom.</strong> Ran the station across sessions for 89 students, briefed each group, supervised handling, and reset the hardware between groups.</li>
     </ol>
 
     <h2>Why it belongs in a planning course</h2>
     <p>
-      Planning a task and automating a task ask the same question: what exactly are the steps, in
-      what order, with what tolerance for variation. Students who had to teach an arm to repeat a
-      motion found the gaps in their own task breakdown quickly, which is a cheaper way to learn it
-      than on a jobsite.
+      Estimating and scheduling both depend on a task duration somebody has to supply. Usually
+      that number comes from experience, a reference table, or a guess presented with more
+      confidence than it deserves. Running the task on hardware first replaces that guess with a
+      measured number, then lets students see how sensitive their FlexSim schedule is to it — which
+      is closer to how estimating actually works on a real project than a lecture on the topic
+      would be.
     </p>
 
     <h2>Notes</h2>
     <ul>
       <li>The hardware is deliberately inexpensive and open-source, which makes the exercise repeatable for a department without a robotics budget.</li>
+      <li>Built and ran this component of the course solo, as TA, including the full arm fleet and controller setup.</li>
       <li>Sessions were supervised throughout, with the working envelope kept clear during operation.</li>
     </ul>
 
