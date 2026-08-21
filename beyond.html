@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beyond the work — Mohammad Hossein Heydari</title>
+<meta name="description" content="Volunteer construction, trail building, honours and peer review service.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* photo grid — scoped to this page so style.css stays untouched */
+  .gallery { margin: 2.25rem 0 0; }
+  .gallery-grid {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 640px) { .gallery-grid { grid-template-columns: repeat(3, 1fr); } }
+  .gallery-grid img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border: 1px solid var(--rule-strong);
+    filter: grayscale(1) contrast(1.04);
+    transition: filter 200ms ease;
+  }
+  .gallery-grid img:hover { filter: grayscale(0) contrast(1); }
+  .gallery figcaption {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    color: var(--graphite-2);
+    margin-top: 0.75rem;
+  }
+  @media print { .gallery { display: none; } }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="wordmark" href="index.html">Mohammad Hossein Heydari</a>
+    <nav aria-label="Sections">
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#background">Background</a>
+      <a href="beyond.html">Beyond the work</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="doc wrap">
+    <a class="back" href="index.html">← Home</a>
+    <h1>Beyond the work</h1>
+    <p class="lede">
+      Construction skills donated, trails rebuilt, and service to the field I publish in.
+    </p>
+  </section>
+
+  <section class="prose wrap">
+
+    <h2>Volunteer</h2>
+
+    <ul class="listing">
+      <li>
+        <span class="yr">Blacksburg</span>
+        <span>
+          <strong>Hammers and Hearts.</strong> Volunteer construction on homes for local families —
+          framing, finishing, and site work alongside other volunteers. The same trades I coordinate
+          on paper, done with my own hands.
+        </span>
+      </li>
+      <li>
+        <span class="yr">Blacksburg</span>
+        <span>
+          <strong>Outdoor Club at Virginia Tech.</strong> Trail construction and maintenance —
+          clearing, grading, drainage, and step building on public trails across southwest Virginia.
+        </span>
+      </li>
+    </ul>
+
+    <!-- PHOTOS: add three images to a photos/ folder at the repo root, then uncomment.
+         Landscape crops work best (roughly 1200 x 900). They render greyscale and
+         come to full colour on hover.
+    <figure class="gallery">
+      <div class="gallery-grid">
+        <img src="photos/trail-1.jpg" alt="Trail work with the Outdoor Club at Virginia Tech" width="1200" height="900" loading="lazy">
+        <img src="photos/trail-2.jpg" alt="Trail work with the Outdoor Club at Virginia Tech" width="1200" height="900" loading="lazy">
+        <img src="photos/trail-3.jpg" alt="Trail work with the Outdoor Club at Virginia Tech" width="1200" height="900" loading="lazy">
+      </div>
+      <figcaption>Trail building in southwest Virginia.</figcaption>
+    </figure>
+    -->
+
+    <h2>Honours</h2>
+
+    <ul class="listing">
+      <li>
+        <span class="yr">Society</span>
+        <span>
+          <strong>Edward A. Bouchet Graduate Honor Society.</strong> Inducted member. The society
+          recognises scholarship alongside service and advocacy in graduate education.
+        </span>
+      </li>
+      <li><span class="yr">2024</span> <span><strong>Graduate School Scholar Award</strong> · Virginia Tech</span></li>
+      <li><span class="yr">2024</span> <span><strong>Graduate School Strategic Planning Committee</strong> · member</span></li>
+      <li><span class="yr">2023</span> <span><strong>Carl and Jane Belt Graduate Fellowship</strong> · Virginia Tech</span></li>
+      <li><span class="yr">2023</span> <span><strong>Allan Myers Student Competition</strong> · winner, site layout planning</span></li>
+      <li><span class="yr">Cert.</span> <span><strong>Future Professoriate Graduate Certificate</strong> · Virginia Tech</span></li>
+    </ul>
+
+    <h2>Peer review</h2>
+    <p>
+      46 reviews for seven journals, most of them in construction automation and building
+      engineering: <em>Automation in Construction</em>, <em>Engineering, Construction and
+      Architectural Management</em>, <em>Journal of Building Engineering</em>, <em>Engineering
+      Applications of Artificial Intelligence</em>, <em>Journal of Asian Architecture and Building
+      Engineering</em>, <em>Data in Brief</em>, and <em>Civil Engineering</em>.
+    </p>
+
+    <h2>Research on the workforce</h2>
+    <p>
+      A steady line of my published work asks who gets into construction and who stays: a systematic
+      review of diversity, equity and inclusion in the AEC industry in the <em>Journal of Management
+      in Engineering</em>, a system dynamics study of workforce inclusion and organisational
+      performance in the <em>Journal of Construction Engineering and Management</em>, an
+      industry-centric investigation of educational practice, and an industry white paper. The
+      volunteering and the papers are the same interest, approached two ways.
+    </p>
+
+  </section>
+
+  <nav class="wrap pager" aria-label="More">
+    <a href="index.html">← Home</a>
+    <a href="index.html#projects">Selected projects →</a>
+  </nav>
+
+</main>
+
+<footer class="wrap colophon">
+  <span>© 2026 Mohammad Hossein Heydari</span>
+  <span><a href="mailto:Heydari@vt.edu">Heydari@vt.edu</a></span>
+</footer>
+
+</body>
+</html>
