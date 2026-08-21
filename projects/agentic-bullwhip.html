@@ -57,8 +57,8 @@
     </p>
 
     <div class="doc-meta">
-      <div><span class="k">Role</span><span class="v">Lead author: design, implementation, analysis</span></div>
-      <div><span class="k">Stack</span><span class="v">Python · OpenAI GPT-4o-mini</span></div>
+      <div><span class="k">Role</span><span class="v">Lead researcher: design, implementation, analysis</span></div>
+      <div><span class="k">Stack</span><span class="v">Python · Claude Sonnet</span></div>
       <div><span class="k">Status</span><span class="v">Under review, 2025</span></div>
       <div><span class="k">Code</span><span class="v"><a href="https://github.com/MHhey/Bullwhip-Simulation-in-Construction-Supply-Chains" target="_blank" rel="noopener">GitHub repository</a></span></div>
     </div>
@@ -123,7 +123,7 @@
       out of a standard base stock calculation, so the arithmetic stays outside the model.
     </p>
     <ul>
-      <li><strong>Decision model</strong> an LLM at low temperature, returning a schema-constrained JSON vector of ordering coefficients.</li>
+      <li><strong>Decision model</strong> Claude Sonnet at low temperature, returning a schema-constrained JSON vector of ordering coefficients.</li>
       <li><strong>Simulation core</strong> Python, with deterministic inventory accounting, order settlement, and fixed lead times per tier.</li>
       <li><strong>Agent state</strong> role prompt, on-hand inventory, backlog, in-transit pipeline, and a regime-dependent view of other tiers.</li>
       <li><strong>Why the split matters</strong> agents decide and the simulator settles, so an arithmetic slip by the model cannot contaminate the measured variance.</li>
@@ -145,38 +145,24 @@
       <figcaption>The four network configurations tested.</figcaption>
     </figure>
 
-    <p>
-      Demand comes from real biweekly steel procurement records for three EU Horizon 2020 building
-      projects rather than a synthetic pattern. Partway through each run a supply disruption extends
-      supplier lead times for eight weeks, which is what exposes how each configuration behaves under
-      stress.
-    </p>
-
     <h2>What it found</h2>
+    <ul>
+      <li><strong>Share your demand, not your stock levels.</strong> The visibility that helped was giving every tier the real demand signal. Giving them each other's inventory and backlog numbers usually made things worse. Worth checking against what a visibility platform is actually offering to show you.</li>
+      <li><strong>Hedging starts before the shortage does.</strong> When tiers could see only their neighbours, they built stock in the weeks before a disruption arrived, reacting to hints rather than facts. With real demand visible, orders tracked the schedule straight through the same disruption.</li>
+      <li><strong>Material reuse needs portfolio scale.</strong> Recovering and rerouting material cost more coordination than it returned on a single project. Across several projects running at once, that reversed and the recovered material began acting as a buffer.</li>
+      <li><strong>Testable before you commit.</strong> Chain structure, who talks to whom, and what gets shared can each be varied and rerun, so a procurement setup can be stress tested in preconstruction rather than discovered on site.</li>
+    </ul>
 
     <figure class="shot wide">
       <img src="figures/results.png" alt="Four charts of bullwhip ratio by supply chain role, comparing local, global, and coordinated information sharing across linear and closed-loop, single and multi-project networks" width="975" height="607" loading="lazy">
-      <figcaption>Bullwhip ratio by tier under each information regime. A flat line means variance is not amplifying upstream.</figcaption>
+      <figcaption>Bullwhip ratio by tier under each information model. A flat line means variance is not amplifying upstream.</figcaption>
     </figure>
 
     <p>
       The clearest result is the shape of the green line. Under coordinated sharing, where agents see
       actual demand, the bullwhip ratio stays roughly flat from the site to the supplier in all four
-      network configurations. Under the other two regimes it climbs steeply with every tier. Sharing
+      network configurations. Under the other two models it climbs steeply with every tier. Sharing
       the right signal did not just reduce amplification, it largely stopped it propagating.
-    </p>
-    <ul>
-      <li><strong>More visibility was not better</strong> giving every tier sight of inventory and backlog across the chain produced higher amplification than showing them only their neighbours, in three of the four configurations. Seeing upstream strain prompted agents to build stock ahead of a shortage rather than reassuring them.</li>
-      <li><strong>Content beat scope</strong> the regime that helped was the one that changed what agents saw, not how far they could see. Demand visibility addressed the underlying forecasting problem. Inventory visibility fed the anticipatory ordering that causes the effect in the first place.</li>
-      <li><strong>Topology depends on scale</strong> closed-loop chains amplified more than linear ones on a single project, where recovery flows add coordination burden without much return. Across several concurrent projects that reversed, and the recovered material became a buffer instead.</li>
-      <li><strong>Stockpiling started before the shock</strong> under local visibility, agents built inventory in the weeks before the disruption arrived, then drew it down during the constraint. Under coordinated sharing, orders tracked demand throughout and that anticipatory spike did not appear.</li>
-      <li><strong>Checks on the model</strong> amplification patterns held across ten independent runs per scenario, and lead times generated by the agents fell within empirically observed construction ranges in 80% of comparisons against an external UK builders' merchant dataset.</li>
-    </ul>
-    <p>
-      One caveat worth stating plainly. The ratios in the closed-loop single-project case run high,
-      and they describe variance amplification under the modelled conditions rather than magnitudes
-      measured on real projects. The comparison between regimes is the finding. The absolute numbers
-      are not an estimate of what any given supply chain would show.
     </p>
 
     <h2>Paper</h2>
@@ -205,7 +191,7 @@
   var svg = document.getElementById("whipSvg");
   if (!svg) return;
   var W = 900, MID = 105;
-  var tiers = ["Contractor", "Procurement Office", "3PL", "Distributor", "Supplier"];
+  var tiers = ["Contractor", "Procurement", "Third parties", "Distributor", "Supplier"];
   var NS = "http://www.w3.org/2000/svg";
   var gT = document.getElementById("whipTiers");
 
