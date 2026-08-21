@@ -11,27 +11,26 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
 <style>
-  /* photo grid — scoped to this page */
-  .gallery { margin: 2.25rem 0 0; max-width: var(--measure); }
-  .gallery-grid { display: grid; gap: 0.75rem; grid-template-columns: 1fr; }
-  @media (min-width: 640px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
-  .gallery-grid img {
+  /* photos — scoped to this page, each stacked and sized to its own shot */
+  .shot { margin: 2.25rem 0; max-width: var(--measure); }
+  .shot img {
     width: 100%;
-    aspect-ratio: 3 / 4;
-    object-fit: cover;
+    max-width: 520px;
+    height: auto;
+    display: block;
     border: 1px solid var(--rule-strong);
     filter: grayscale(1) contrast(1.04);
     transition: filter 200ms ease;
   }
-  .gallery-grid img:hover { filter: grayscale(0) contrast(1); }
-  .gallery figcaption {
+  .shot img:hover { filter: grayscale(0) contrast(1); }
+  .shot figcaption {
     font-family: var(--mono);
     font-size: 0.72rem;
     letter-spacing: 0.06em;
     color: var(--graphite-2);
-    margin-top: 0.75rem;
+    margin-top: 0.6rem;
   }
-  @media print { .gallery { display: none; } }
+  @media print { .shot { display: none; } }
 </style>
 </head>
 <body>
@@ -61,7 +60,7 @@
     </p>
 
     <div class="doc-meta">
-      <div><span class="k">Role</span><span class="v">Teaching assistant: build, programming, instruction</span></div>
+      <div><span class="k">Role</span><span class="v">Teaching assistant: build, programming, instruction — built and ran solo</span></div>
       <div><span class="k">Course</span><span class="v">Process Planning and Design · 89 students</span></div>
       <div><span class="k">Stack</span><span class="v">LeRobot SO-101 · Raspberry Pi 5 · FlexSim</span></div>
       <div><span class="k">When</span><span class="v">Spring 2026</span></div>
@@ -85,12 +84,14 @@
       input to a scheduling exercise rather than an assumption pulled from a textbook.
     </p>
 
-    <figure class="gallery">
-      <div class="gallery-grid">
-        <img src="photos/robots-1.jpg" alt="A set of LeRobot SO-101 arms on a desk, red and grey 3D-printed builds with visible wiring, being inspected by hand" width="960" height="1280" loading="lazy">
-        <img src="photos/robots-2.jpg" alt="Close-up of a Raspberry Pi 5 controller being wired up for the LeRobot arms" width="1400" height="1866" loading="lazy">
-      </div>
-      <figcaption>20 arms assembled and wired to individual Raspberry Pi 5 controllers, Process Planning and Design, spring 2026.</figcaption>
+    <figure class="shot">
+      <img src="photos/robots-1.jpg" alt="A set of LeRobot SO-101 arms on a desk, red and grey 3D-printed builds with visible wiring, being inspected by hand" width="960" height="1280" loading="lazy">
+      <figcaption>20 arms assembled and wired, ready for the classroom.</figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img src="photos/robots-2.jpg" alt="Close-up of a Raspberry Pi 5 controller being wired up for the LeRobot arms" width="1400" height="1493" loading="lazy">
+      <figcaption>Each arm runs on its own Raspberry Pi 5 controller.</figcaption>
     </figure>
 
     <h2>What was involved</h2>
