@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Agentic AI simulation of construction supply chains — Mohammad Hossein Heydari</title>
-<meta name="description" content="Multi-agent LLM simulation of demand distortion across five construction supply chain tiers, run under open-loop and closed-loop information regimes.">
+<meta name="description" content="A multi-agent LLM simulation of the bullwhip effect across five construction supply chain tiers, run over 12 scenarios varying network topology, project scope, and information sharing.">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,15 +32,16 @@
     <a class="back" href="../index.html#projects">← All work</a>
     <h1>Agentic AI simulation of construction supply chains</h1>
     <p class="lede">
-      Modeled five supply chain tiers as autonomous AI agents ordering from limited local
-      information, and measured how far shared information reduces the distortion that reaches
-      suppliers.
+      Modeled a five-tier construction supply chain as autonomous LLM agents, each ordering from only
+      what it can see, and measured how a small change on site grows into large swings upstream — and
+      what actually reduces it.
     </p>
 
     <div class="doc-meta">
       <div><span class="k">Role</span><span class="v">Lead author: design, implementation, analysis</span></div>
-      <div><span class="k">Stack</span><span class="v">Python · AutoGen · crewAI</span></div>
+      <div><span class="k">Stack</span><span class="v">Python · OpenAI GPT-4o-mini</span></div>
       <div><span class="k">Status</span><span class="v">Under review, 2025</span></div>
+      <div><span class="k">Code</span><span class="v"><a href="https://github.com/MHhey/Bullwhip-Simulation-in-Construction-Supply-Chains" target="_blank" rel="noopener">GitHub repository</a></span></div>
     </div>
   </section>
 
@@ -48,7 +49,7 @@
 
     <figure class="whip">
       <svg id="whipSvg" viewBox="0 0 900 210" role="img" aria-labelledby="whip-title">
-        <title id="whip-title">A steady ordering signal at the owner grows into large erratic swings by the supplier.</title>
+        <title id="whip-title">A steady ordering signal at the contractor grows into large erratic swings by the supplier.</title>
         <line x1="0" y1="105" x2="900" y2="105" stroke="var(--rule)" stroke-width="1"></line>
         <g id="whipTiers"></g>
         <path id="whipFill" class="whip-fill" fill="var(--hivis)"></path>
@@ -61,61 +62,75 @@
       </figcaption>
     </figure>
 
+
     <h2>Overview</h2>
     <p>
-      The bullwhip effect describes order variance growing as it moves upstream through a supply
-      chain: a small change on site becomes a large one for the fabricator, and larger still for
-      the supplier. Construction has the same tiered structure as manufacturing but weaker
-      information flow: each tier generally sees only its immediate neighbours, so it orders
-      defensively against uncertainty it cannot resolve.
+      The bullwhip effect is when order variance grows as it travels upstream: a small change on site
+      becomes a larger one for the distributor, and larger still for the supplier. Construction has
+      the same tiered structure as manufacturing but weaker information flow — work is organised into
+      temporary project coalitions, and each tier usually sees only its immediate neighbours, so it
+      orders defensively against uncertainty it cannot resolve.
     </p>
     <p>
-      Classical bullwhip models assume rational agents optimising a known cost function over
-      information they do not have in practice. This project replaces that with autonomous LLM
-      agents reasoning in natural language over the information each tier actually holds.
+      Traditional agent-based models encode each tier's behaviour as a fixed ordering rule. This study
+      replaces those rules with autonomous LLM agents that reason over the information each tier
+      actually holds and return a structured ordering decision, so behaviour adapts to context rather
+      than following a preset heuristic.
     </p>
 
-    <h2>System configuration</h2>
+    <h2>How it is built</h2>
+    <p>
+      Five agents represent the tiers of a construction supply chain — Contractor, Procurement Office,
+      Third-Party Logistics (3PL), Distributor, and Supplier. Each agent holds its own inventory,
+      backlog, and in-transit state. On every time step an agent reads the slice of the system it is
+      allowed to see, calls an LLM to decide how to order, and the simulator settles the resulting
+      material and information flow deterministically before the next step.
+    </p>
     <ul>
-      <li><strong>Orchestration</strong>: AutoGen</li>
-      <li><strong>Agent role definition</strong>: crewAI</li>
-      <li><strong>Simulation core</strong>: Python; deterministic inventory accounting and order settlement</li>
-      <li><strong>Agents</strong>: 5 tiers: supplier, fabricator, subcontractor, contractor, owner</li>
-      <li><strong>Agent state</strong>: role prompt, inventory level, order history, visibility window</li>
+      <li><strong>Agents</strong> — 5 tiers: Contractor, Procurement Office, 3PL, Distributor, Supplier.</li>
+      <li><strong>Decision model</strong> — OpenAI GPT-4o-mini, low temperature, returning a schema-constrained JSON vector of ordering coefficients.</li>
+      <li><strong>Simulation core</strong> — Python; deterministic inventory accounting, order settlement, and lead times.</li>
+      <li><strong>Agent state</strong> — role prompt, inventory, backlog, in-transit pipeline, and a regime-dependent view of neighbours.</li>
     </ul>
 
-    <h2>Information regimes</h2>
-    <ol>
-      <li><strong>Open-loop</strong>: agents observe only their own orders and receipts. Baseline; matches current practice in most construction supply chains.</li>
-      <li><strong>Closed-loop</strong>: downstream demand and upstream lead-time signals shared across tiers.</li>
-    </ol>
-    <p>No agent receives the global demand signal in either regime.</p>
-
-    <h2>Execution loop</h2>
-    <pre><code>for period in horizon:
-    for tier in chain:                  # downstream → upstream
-        context = tier.observe()        # regime-dependent visibility
-        order   = tier.decide(context)  # LLM agent
-    simulator.settle(orders)            # deterministic accounting
-    record(variance, inventory, stockouts)</code></pre>
-
-    <h2>Metrics</h2>
+    <h2>The scenarios</h2>
+    <p>
+      The study runs a full factorial of three dimensions — 12 scenarios in total — to see what
+      actually drives amplification:
+    </p>
     <ul>
-      <li>Order variance amplification between adjacent tiers</li>
-      <li>Inventory swing and stockout frequency per tier</li>
-      <li>Propagation time for a demand shock to reach the top of the chain</li>
-      <li>Divergence between agent decisions and human decisions in the same scenario</li>
+      <li><strong>Network topology</strong> — linear forward chains vs. closed-loop chains that route recovered material back to the supplier (a circular-economy configuration).</li>
+      <li><strong>Project scope</strong> — single project vs. multiple concurrent projects sharing logistics.</li>
+      <li><strong>Information regime</strong> — local (neighbours only), global (system-wide state), and efficient (a curated signal shared across tiers).</li>
+    </ul>
+    <p>
+      Demand is grounded in real biweekly steel-procurement data from EU Horizon 2020 building
+      projects. A supply disruption is injected at week 30 — lead times extended for eight weeks — to
+      test how each configuration responds to a shock.
+    </p>
+
+    <h2>What it found</h2>
+    <ul>
+      <li><strong>Content over access</strong> — the type of signal shared matters more than whether information is shared at all — an efficient, curated signal damped amplification far more than simply exposing all tiers to global state, which often <em>increased</em> it by triggering defensive stockpiling.</li>
+      <li><strong>Topology is contingent</strong> — closed-loop chains amplified more than linear ones in single projects, but became a source of resilience once multiple projects shared recovered material.</li>
+      <li><strong>Anticipatory stockpiling</strong> — under local visibility, agents built inventory weeks ahead of the week-30 disruption — limited sight lines produced precautionary ordering that amplified supply risk.</li>
+      <li><strong>Validated</strong> — agent behaviour reproduced across 10 independent seeds, and matched empirical construction lead-time ranges in 80% of observations against an external UK builders'-merchant dataset.</li>
     </ul>
 
     <h2>Method notes</h2>
     <ul>
-      <li>Inventory accounting sits outside the agents. Agents decide; the simulator settles. Keeping arithmetic out of the model prevents its errors contaminating the measured variance.</li>
-      <li>Runs repeat across seeds. Agent decisions are non-deterministic, so results are reported as distributions rather than single traces.</li>
+      <li>Inventory accounting sits outside the agents: agents decide, the simulator settles. Keeping the arithmetic out of the model prevents LLM errors from contaminating the measured variance.</li>
+      <li>Runs repeat across seeds. Because agent decisions are non-deterministic, results are reported as distributions rather than single traces.</li>
       <li>Agent prompts are versioned with results, since a prompt change is a change to the experimental condition.</li>
     </ul>
 
     <h2>Paper</h2>
-    <p>Agentic AI Simulation of the Bullwhip Effect in Construction Supply Chains (under review, 2025).</p>
+    <p>
+      <em>Agentic AI Simulation of Bullwhip Effect in Construction Supply Chains</em> — Heydari,
+      Shojaei, McCoy, Akanmu (under review, 2025). Simulation code is available in the
+      <a href="https://github.com/MHhey/Bullwhip-Simulation-in-Construction-Supply-Chains" target="_blank" rel="noopener">GitHub repository</a>.
+    </p>
+
   </section>
 
   <nav class="wrap pager" aria-label="More work">
@@ -130,13 +145,12 @@
   <span><a href="mailto:Heydari@vt.edu">Heydari@vt.edu</a></span>
 </footer>
 
-
 <script>
 (function () {
   var svg = document.getElementById("whipSvg");
   if (!svg) return;
   var W = 900, MID = 105;
-  var tiers = ["Owner", "Contractor", "Subcontractor", "Fabricator", "Supplier"];
+  var tiers = ["Contractor", "Procurement Office", "3PL", "Distributor", "Supplier"];
   var NS = "http://www.w3.org/2000/svg";
   var gT = document.getElementById("whipTiers");
 
@@ -211,5 +225,6 @@
   });
 })();
 </script>
+
 </body>
 </html>
