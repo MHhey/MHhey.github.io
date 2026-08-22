@@ -78,13 +78,11 @@
     <ul>
       <li>LLM and agentic stages decompose documents into retrievable units</li>
       <li>Units routed to the extraction step suited to their content and layout</li>
-      <li>Output is typed records, not prose, for automated reporting</li>
-      <li>Decomposition localises failures to a field rather than the whole record</li>
     </ul>
 
     <h3>Computer vision</h3>
     <ul>
-      <li>Site imagery processed at scale</li>
+      <li>Site imagery processed at scale to roughly estimate construction progress</li>
       <li>Model development and validation for extracting insights from construction photography</li>
     </ul>
 
@@ -93,12 +91,6 @@
       <li>System architecture connecting AI pipelines to backend microservices</li>
       <li>Storage and retrieval across SQL and AWS, from raw input through deployment</li>
       <li>REST interfaces between extraction stages and consuming services</li>
-    </ul>
-
-    <h2>Notes</h2>
-    <ul>
-      <li>Single-prompt-per-document does not scale: it fails on long inputs and unusual layouts, and gives no signal distinguishing the two failure modes.</li>
-      <li>Evaluation is the constraint, not extraction. Determining whether a prompt change, model swap or routing rule improved anything requires ground truth that itself needs construction domain knowledge to produce.</li>
     </ul>
 
     <p style="margin-top:2.5rem; font-size:0.9rem; color:var(--graphite-2)">
