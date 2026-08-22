@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Housing listing and booking platform — Mohammad Hossein Heydari</title>
-<meta name="description" content="React, Node.js and PostgreSQL housing platform with authentication, listings and real-time booking. Six-person team.">
+<meta name="description" content="React, TypeScript and Node.js housing platform with authentication, listings and real-time booking. Six-person team.">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,14 +32,15 @@
     <a class="back" href="../index.html#projects">← All work</a>
     <h1>Housing listing and booking platform</h1>
     <p class="lede">
-      Led a six-person team building a React, Node.js, and PostgreSQL platform with authentication,
+      Led a six-person team building a React, TypeScript, and Node.js platform with authentication,
       listings, and real-time booking, delivered across two semesters.
     </p>
 
     <div class="doc-meta">
       <div><span class="k">Role</span><span class="v">Project lead and full-stack developer</span></div>
-      <div><span class="k">Stack</span><span class="v">React · Node.js · PostgreSQL · Jira</span></div>
+      <div><span class="k">Stack</span><span class="v">React · TypeScript · Node.js · Prisma · SQLite</span></div>
       <div><span class="k">When</span><span class="v">May – December 2025</span></div>
+      <div><span class="k">Code</span><span class="v"><a href="https://github.com/KaurHarleen1930/HokieNest-Frontend" target="_blank" rel="noopener">GitHub repository</a></span></div>
     </div>
   </section>
 
@@ -53,11 +54,24 @@
       every user.
     </p>
 
+    <figure class="media">
+      <div class="media-frame">
+        <video controls preload="metadata" playsinline muted poster="demo2-poster.jpg">
+          <source src="demo2.mp4" type="video/mp4">
+          Your browser does not support embedded video.
+          <a href="demo2.mp4">Download the walkthrough</a> instead.
+        </video>
+      </div>
+      <figcaption>Platform walkthrough, listing to booking.</figcaption>
+    </figure>
+
     <h2>Stack</h2>
     <ul>
-      <li><strong>Frontend</strong>: React</li>
-      <li><strong>Backend</strong>: Node.js</li>
-      <li><strong>Database</strong>: PostgreSQL</li>
+      <li><strong>Frontend</strong>: React with TypeScript, Tailwind CSS, and Radix UI components</li>
+      <li><strong>Backend</strong>: Node.js and Express, with JWT authentication</li>
+      <li><strong>Database</strong>: SQLite via Prisma ORM</li>
+      <li><strong>Data and ML</strong>: scraped comparable listings and local crime data, used to train a rent price prediction model</li>
+      <li><strong>Testing</strong>: Jest and Supertest for the API, Playwright for end-to-end flows</li>
       <li><strong>Process</strong>: Jira, agile, two-semester delivery</li>
     </ul>
 
@@ -66,20 +80,17 @@
       <li>User authentication</li>
       <li>Property listings with search</li>
       <li>Booking system with real-time availability updates</li>
+      <li>Neighborhood safety indicator, built from scraped local crime data</li>
+      <li>Predicted rent pricing, trained on scraped comparable listings and market data for the area</li>
     </ul>
 
     <h2>My role</h2>
     <ul>
-      <li>Project management for a six-person cross-functional team: stakeholder requirements, sprint planning, coordination</li>
-      <li>PostgreSQL schema for listings, users and bookings</li>
+      <li>Prisma schema for listings, users and bookings</li>
       <li>Implementation of authentication, listings interface and booking flow</li>
+      <li>Scraped crime and comparable-listing data, and built the rent price prediction model</li>
     </ul>
 
-    <h2>Notes</h2>
-    <ul>
-      <li>Two users opening the same listing at the same moment must be resolved in the database rather than the interface. Setting that boundary early avoided a class of bug that is expensive to fix later.</li>
-    </ul>
-  </section>
 
   <nav class="wrap pager" aria-label="More work">
     <a href="image-classification.html">← Previous: Efficient image classification for field hardware</a>
