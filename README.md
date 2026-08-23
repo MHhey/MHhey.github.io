@@ -4,14 +4,15 @@ Plain HTML and CSS. No build step, no dependencies.
 
 ```
 index.html                    single page
+beyond.html                   volunteering, honours, outreach
 style.css                     design tokens in :root at the top
 favicon.svg
 projects/
   agentic-bullwhip.html
-  document-pipelines.html     ← demo video slot
-  image-classification.html
+  document-pipelines.html
+  supply-network-study.html
+  teaching-robots.html
   housing-platform.html
-Heydari-Resume.pdf            ← you add this
 ```
 
 ## What this site is for
@@ -21,128 +22,90 @@ A supplement to your résumé when applying to construction technology companies
 and 30 seconds here.
 
 The site leads with construction and treats the software as what you bring to it, not the other way
-round. That ordering is the point: at your target companies, engineers who can build are common and
-engineers who understand a submittal are rare. Every project card opens with the construction
-problem in plain language before it names a framework, so a non-technical recruiter can follow it.
+round. Every project card opens with the construction problem in plain language before it names a
+framework, so a non-technical recruiter can follow it.
 
 Cut on purpose: the full publication list, peer review record, awards, fellowships, GRE/TOEFL
-scores, research interests, and the standalone publications page. Three papers remain, chosen for
-relevance to AI and supply chain work, with a Scholar link for anyone who wants the rest. Pre-2023
-positions are compressed into one "Earlier" entry.
-
-If you later want a version for academic or research-scientist applications, that's a different
-site and should be built as one.
+scores, and the standalone publications page. A handful of papers remain on the homepage, chosen for
+relevance to AI and supply chain work, with a Scholar link for the rest.
 
 ## Deploy
 
 Repo must be named exactly `MHhey.github.io`, files at the root.
 
 ```bash
-git init
 git add .
-git commit -m "Initial site"
-git branch -M main
-git remote add origin https://github.com/MHhey/MHhey.github.io.git
-git push -u origin main
+git commit -m "update"
+git push
 ```
 
-Then **Settings → Pages → Source: Deploy from a branch → main / (root)**.
+**Settings → Pages → Source: Deploy from a branch → main / (root)**.
 
 Local preview: `python3 -m http.server 8000`
 
-## Before publishing
+## Status
 
-1. **Placeholder links.** Search for `data-fill` — 3 instances, all `href="#"`. Fill in LinkedIn
-   (×2) and Google Scholar (×1), then delete the attribute.
-2. **Résumé.** Add `Heydari-Resume.pdf` at the root. Use the CS/AI version — the site is written to
-   match that framing, and a construction PM résumé behind this page would read as a mismatch.
-3. **Photo.** This is the biggest remaining gap. Add a square photo (~600px) as `photo.jpg` at the
-   root, then uncomment the `PORTRAIT` block at the top of `index.html`. It renders greyscale at
-   180px beside the intro. Both of the sites you showed me have one; recruiters look.
+Résumé, photo, and placeholder links are in. Demo videos are live on document-pipelines,
+housing-platform, and supply-network-study.
 
-## Verify
-
-Details I inferred rather than took from your documents. Check before an interviewer asks:
-
-- `agentic-bullwhip.html`: deterministic simulation core, execution loop, repeated seeds, prompt
-  versioning
-- `image-classification.html`: staged unfreezing, augmentation, 32×32 upsampling
-- `housing-platform.html`: the concurrency note
-
-**Your degree titles conflict across your three documents.** The CV says *PhD, Environmental Design
-and Planning* / *M.Eng., Computer Science*; your résumés say *Construction Engineering and
-Management* / *M.Sc.* The site uses the CV version. Make all of them match before you send anything.
-
-## Demo video
-
-`projects/document-pipelines.html`, comment block marked `DEMO VIDEO`. Replace the
-`<div class="pending">` with:
-
-```html
-<iframe src="https://www.youtube.com/embed/VIDEO_ID"
-        title="Pipeline demo" allowfullscreen loading="lazy"></iframe>
-```
-
-or self-hosted (`demo.mp4` in `projects/`):
-
-```html
-<video controls preload="metadata" poster="demo-poster.jpg">
-  <source src="demo.mp4" type="video/mp4">
-</video>
-```
-
-Use YouTube unlisted — GitHub Pages caps repos at 1 GB. Clear the content with Intellus first.
+**Still open:**
+- Buy a domain (~$12/yr), point it at Pages via Settings → Pages → Custom domain
+- Double-check your degree titles read the same way across the CV, résumé, and site before sending
+  anything out — this was flagged once already as inconsistent
 
 ## Adding a project
 
 Copy any file in `projects/`, edit it, add a matching `<article class="card">` in `index.html`, and
 fix the `.pager` links on the neighbouring pages.
 
-Page structure: **Overview → configuration/stack → implementation (numbered) → notes → repository.**
+Page structure: **Overview → how it's built → findings/scenarios → notes → repository.**
+
+## Adding a demo video
+
+Self-hosted, in the project's own folder:
+
+```html
+<figure class="media">
+  <div class="media-frame">
+    <video controls preload="metadata" playsinline muted poster="demo-poster.jpg">
+      <source src="demo.mp4" type="video/mp4">
+      Your browser does not support embedded video.
+      <a href="demo.mp4">Download the walkthrough</a> instead.
+    </video>
+  </div>
+  <figcaption>Caption here.</figcaption>
+</figure>
+```
+
+GitHub's web uploader caps at 25 MB; pushing via git only caps at 100 MB per file, so push from the
+command line for anything larger. Aim for under 20 MB and 60–90 seconds regardless, compressed with
+something like:
+
+```bash
+ffmpeg -i demo.mp4 -vcodec libx264 -crf 28 -preset slow -vf scale=1280:-2 -an -movflags +faststart demo-web.mp4
+ffmpeg -i demo-web.mp4 -ss 00:01:20 -vframes 1 demo-poster.jpg
+```
 
 ## Design
 
 - Concrete `#E4E4DF`, graphite `#333A3F`, hi-vis amber `#F0B429`, deep teal `#14605C`
 - Space Grotesk (display), IBM Plex Sans (body), IBM Plex Mono (labels, data)
-- Hero animation: 620 drifting dots on canvas, ~27-second loop. Materials (steel section, stacked
-  timber, pipe bundle, blockwork) form first, then flow directly into the map rather than
-  scattering, so arrival reads as one continuous movement. Every other change passes through a full
-  scatter. Scene three spells out two domain terms; scene four is the axonometric building.
-- The terms are drawn with a built-in vector stroke font (the `GLYPH` table in the script), so dots
-  sit along the letter strokes. No canvas text rasterization, nothing to fail silently. Four fixed
-  terms, all on screen together, no rotation: AGENTIC AI (amber, largest slot), COMPUTER VISION,
-  PROCUREMENT, SCHEDULING. Two name a capability and two a construction domain, which is the
-  pairing a recruiter needs to read in a few seconds. Laid out across the frame on wide screens,
-  stacked on narrow.
-- Edit the `TERMS` array to change them; every A-Z letter plus space and hyphen is in the font, and
-  the amber one is whichever sits first. Slot positions are collision-checked at five breakpoints;
-  terms much past 16 characters will start to shrink.
-- Dots claim their nearest target by greedy assignment so paths don't cross; free drift bounces at
-  the edges rather than wrapping. Under `prefers-reduced-motion` it renders the finished building,
-  static. Hidden in print.
-- The bullwhip wave animation now lives on the bullwhip project page
-  (`projects/agentic-bullwhip.html`), with all five tier labels and a technical caption, where the
-  surrounding text gives it context. Space is reserved there for your demo video and further
-  explanation.
+- Hero animation: 620 drifting dots on canvas, ~27-second loop, forming construction materials then
+  an axonometric building. Renders static under `prefers-reduced-motion`, hidden in print.
+- Photo galleries on project pages render greyscale, full colour on hover. Keep photos to their
+  natural aspect ratio rather than forcing a shared crop, that's what caused the cropping issues
+  earlier, stack them separately instead of in a grid if they don't share a ratio.
 
 ### Accessibility and print
 
-- All text passes WCAG AA contrast. Verified: body 9.1:1, links 5.8:1, dark-band text 5.4–8.2:1,
-  amber button 9.7:1.
-- Card borders sit at 2.2:1 against the page, below the 3:1 non-text threshold. Deliberate: the
-  cards are already identifiable by background, heading link, hover and focus states, and a 3:1
-  border would read as a heavy outline. If you'd rather pass strictly, set `--rule-strong` to
-  `#7A7A70`.
+- All text passes WCAG AA contrast.
 - Nav and hero links have 44px tap targets on mobile.
-- `@media print` at the bottom of `style.css` strips the chrome, expands link URLs and avoids
-  breaking cards across pages — recruiters save to PDF.
+- `@media print` strips the chrome and expands link URLs, since recruiters save to PDF.
 
-Responsive to 320px, keyboard-navigable, visible focus states. `style.css` still contains unused
-`.split`, `.tally` and `.plain` classes if you want to add a service or volunteering block later.
+Responsive to 320px, keyboard-navigable, visible focus states.
 
 ## Next
 
-- Buy a domain (~$12/yr), point it at Pages via **Settings → Pages → Custom domain**
-- Add screenshots or diagrams to the project pages. They are currently all prose, which is the
-  weakest thing about them visually. One architecture diagram on the bullwhip page and one output
-  screenshot on the housing platform would do more than any amount of extra copy.
+- Add a photo or diagram to any project page still running text-only
+- Revisit the résumé link once you've settled which of your three résumés matches this site's
+  framing
