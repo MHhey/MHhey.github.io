@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Supplier selection under blockchain transparency — Mohammad Hossein Heydari</title>
+<meta name="description" content="An interactive research platform testing how blockchain-enabled transparency changes supplier selection decisions in construction supply chains, built for a controlled behavioural study.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="wordmark" href="../index.html">Mohammad Hossein Heydari</a>
+    <nav aria-label="Sections">
+      <a href="../index.html#projects">Work</a>
+      <a href="../index.html#background">Background</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="doc wrap">
+    <a class="back" href="../index.html#projects">← All work</a>
+    <h1>Supplier selection under blockchain transparency</h1>
+    <p class="lede">
+      Built a research platform that puts people through real supplier selection decisions under
+      different levels of blockchain-enabled supply chain transparency, to measure how visibility
+      actually changes what a buyer chooses, not just what they say they would choose.
+    </p>
+
+    <div class="doc-meta">
+      <div><span class="k">Role</span><span class="v">Sole designer and builder</span></div>
+      <div><span class="k">Stack</span><span class="v">HTML · CSS · JavaScript</span></div>
+      <div><span class="k">Study</span><span class="v">Dissertation, study 3</span></div>
+      <div><span class="k">Code</span><span class="v"><a href="https://github.com/MHhey/supply-network-study" target="_blank" rel="noopener">GitHub repository</a></span></div>
+    </div>
+  </section>
+
+  <section class="prose wrap">
+
+    <figure class="media">
+      <div class="media-frame">
+        <video controls preload="metadata" playsinline muted poster="supply-study-poster.jpg">
+          <source src="supply-study-demo.mp4" type="video/mp4">
+          Your browser does not support embedded video.
+          <a href="supply-study-demo.mp4">Download the walkthrough</a> instead.
+        </video>
+      </div>
+      <figcaption>Predefense walkthrough of the platform.</figcaption>
+    </figure>
+
+    <h2>Overview</h2>
+    <p>
+      Surveys are the usual way to ask whether more supply chain transparency changes buying
+      behaviour, and people are unreliable narrators of their own decisions under hypothetical
+      conditions. This platform instead puts a participant through a real weekly decision. Each week
+      they choose a supplier from a live network, under a specific information condition, and the
+      platform records what they actually picked rather than what they say they would pick.
+    </p>
+
+    <h2>How it works</h2>
+    <p>
+      A participant moves through a sequence of weekly scenarios, tracked with a progress bar at the
+      top of the screen. In each week they see a supply network as an interactive diagram, a central
+      node for themselves, connected to supplier and logistics nodes. Clicking a node opens a panel
+      with that supplier's information, and the amount of information available changes with the
+      week's transparency condition, from a baseline with only standard supplier information, up to
+      conditions with fuller visibility into supplier performance and standing.
+    </p>
+    <ul>
+      <li><strong>Network view</strong> an SVG diagram of the buyer, suppliers, and third-party logistics nodes, with the active selection highlighted.</li>
+      <li><strong>Scenario progression</strong> a multi-week sequence, each week gated until the previous one is complete, so conditions are shown in a controlled order.</li>
+      <li><strong>Information panel</strong> supplier detail that expands with the week's transparency condition, isolating what changes participant behaviour.</li>
+      <li><strong>Consent flow</strong> a separate consent screen ahead of the study proper, since this collects human-subject data.</li>
+    </ul>
+
+    <h2>Why it is built this way</h2>
+    <p>
+      The dependent variable is a choice, not an opinion, so the platform had to be a real interface
+      a participant clicks through rather than a questionnaire describing one. Building it as a
+      standalone web app also meant the information shown at each node could be controlled precisely
+      by condition, which is what makes the comparison across weeks meaningful.
+    </p>
+
+    <h2>Notes</h2>
+    <ul>
+      <li>This is study 3 of my dissertation, and sits alongside the agentic bullwhip simulation as a second angle on the same question, how information availability changes behaviour in a construction supply chain, this time with human decision makers instead of simulated agents.</li>
+      <li>Built and run solo, including the network visualisation, scenario logic, and consent handling.</li>
+    </ul>
+
+  </section>
+
+  <nav class="wrap pager" aria-label="More work">
+    <a href="../index.html#projects">← All work</a>
+    <a href="housing-platform.html">Next: Housing listing and booking platform →</a>
+  </nav>
+
+</main>
+
+<footer class="wrap colophon">
+  <span>© 2026 Mohammad Hossein Heydari</span>
+  <span><a href="mailto:Heydari@vt.edu">Heydari@vt.edu</a></span>
+</footer>
+
+</body>
+</html>
