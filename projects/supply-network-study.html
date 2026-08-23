@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Supplier selection under blockchain transparency — Mohammad Hossein Heydari</title>
-<meta name="description" content="An interactive research platform testing how blockchain-enabled transparency changes supplier selection decisions in construction supply chains, built for a controlled behavioural study.">
+<meta name="description" content="A controlled behavioral experiment with construction professionals testing how different kinds of supply chain information change which suppliers get chosen and whether buyers go direct or through an intermediary.">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,15 +32,15 @@
     <a class="back" href="../index.html#projects">← All work</a>
     <h1>Supplier selection under blockchain transparency</h1>
     <p class="lede">
-      Built a research platform that puts people through real supplier selection decisions under
-      different levels of blockchain-enabled supply chain transparency, to measure how visibility
-      actually changes what a buyer chooses, not just what they say they would choose.
+      Built a research platform that puts construction professionals through real supplier selection
+      decisions under different kinds of supply chain information, to measure what actually changes
+      who they pick and whether they go direct or through an intermediary.
     </p>
 
     <div class="doc-meta">
-      <div><span class="k">Role</span><span class="v">Sole designer and builder</span></div>
+      <div><span class="k">Role</span><span class="v">Lead author, sole designer and builder of the platform</span></div>
       <div><span class="k">Stack</span><span class="v">HTML · CSS · JavaScript</span></div>
-      <div><span class="k">Study</span><span class="v">Dissertation, study 3</span></div>
+      <div><span class="k">Method</span><span class="v">Controlled behavioral experiment, IRB 25-1022</span></div>
       <div><span class="k">Code</span><span class="v"><a href="https://github.com/MHhey/supply-network-study" target="_blank" rel="noopener">GitHub repository</a></span></div>
     </div>
   </section>
@@ -61,10 +61,9 @@
     <h2>Overview</h2>
     <p>
       Surveys are the usual way to ask whether more supply chain transparency changes buying
-      behaviour, and people are unreliable narrators of their own decisions under hypothetical
-      conditions. This platform instead puts a participant through a real weekly decision. Each week
+      behavior. This platform instead puts a participant through a real weekly decision. Each week
       they choose a supplier from a live network, under a specific information condition, and the
-      platform records what they actually picked rather than what they say they would pick.
+      platform records what they actually picked.
     </p>
 
     <h2>How it works</h2>
@@ -76,24 +75,25 @@
       week's transparency condition, from a baseline with only standard supplier information, up to
       conditions with fuller visibility into supplier performance and standing.
     </p>
-    <ul>
-      <li><strong>Network view</strong> an SVG diagram of the buyer, suppliers, and third-party logistics nodes, with the active selection highlighted.</li>
-      <li><strong>Scenario progression</strong> a multi-week sequence, each week gated until the previous one is complete, so conditions are shown in a controlled order.</li>
-      <li><strong>Information panel</strong> supplier detail that expands with the week's transparency condition, isolating what changes participant behaviour.</li>
-      <li><strong>Consent flow</strong> a separate consent screen ahead of the study proper, since this collects human-subject data.</li>
-    </ul>
-
-    <h2>Why it is built this way</h2>
     <p>
-      The dependent variable is a choice, not an opinion, so the platform had to be a real interface
-      a participant clicks through rather than a questionnaire describing one. Building it as a
-      standalone web app also meant the information shown at each node could be controlled precisely
-      by condition, which is what makes the comparison across weeks meaningful.
+      Four conditions were tested. A baseline showing only standard attributes such as delivery
+      reliability, price range, and capacity. Transparency, adding real-time operational visibility.
+      Reputation, adding collective judgement from past performance. Verification, adding credentials
+      and formal certification. Beyond the choice itself, the platform logs decision time, confidence
+      on a seven point scale, and every node inspection, so the record covers how someone arrived at
+      a decision rather than only what they landed on.
     </p>
 
+    <h2>What it found</h2>
+    <ul>
+      <li><strong>Trust is a property of what you can see, not of the supplier.</strong> The same supplier, with the same attributes, got treated as a different firm depending on what buyers could observe about them. Supplier qualification is therefore partly a question of designing visibility, not just vetting the vendor.</li>
+      <li><strong>Intermediaries fill a visibility gap, not a logistics one.</strong> Reliance on middlemen collapsed once buyers could see supplier operations directly. If you want to buy direct, the lever is making performance legible rather than negotiating the distributor out.</li>
+      <li><strong>Credentials and track record are sequential, not competing.</strong> Certification did real work while a relationship had no history, then stopped mattering once behavior was visible. Prequalification that never gives way to performance data keeps paying for a signal that has already gone quiet.</li>
+    </ul>
+    
     <h2>Notes</h2>
     <ul>
-      <li>This is study 3 of my dissertation, and sits alongside the agentic bullwhip simulation as a second angle on the same question, how information availability changes behaviour in a construction supply chain, this time with human decision makers instead of simulated agents.</li>
+      <li>This is a study for my PhD dissertation, and sits alongside the agentic bullwhip simulation as a second angle on the same question, how information availability changes behavior in a construction supply chain, this time with human decision makers instead of simulated agents.</li>
       <li>Built and run solo, including the network visualisation, scenario logic, and consent handling.</li>
     </ul>
 
